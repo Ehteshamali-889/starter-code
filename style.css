@@ -1,0 +1,877 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+:root {
+    --darkbrown: #D87D4A;
+    --darkblack: #101010;
+    --lightgray: #F1F1F1;
+    --lightbrown: #fbaf85;
+    --Coolgray: #FAFAFA;
+    --black: #000000;
+    --White: #FFFFFF;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Manrope', sans-serif;
+    /* position: relative; */
+    background-color: #131313;
+    margin-top: 2%;
+}
+
+.desktop{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    border-bottom: 1px solid #414141;
+    padding-bottom: 2%;
+}
+
+.mobile{
+    display: none;
+}
+
+.topnav{
+    color: var(--White);
+    position: absolute;
+    left: 35%;
+    cursor: pointer;
+}
+
+.toplinks{
+    list-style: none;
+    display: flex;
+    gap:10%;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+li:hover{
+    color: var(--lightbrown);
+}
+
+.intro{
+    color: var(--White);
+    height: 70vh;
+    background-position: center;
+    background-size: cover;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.intromobile{
+    display: none;
+}
+
+
+.tagline{
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+    color: #818181;
+    font-size: 14px;
+    margin-bottom: 2%;
+}
+
+.introproduct{
+    font-size: 56px;
+    width: 90%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 58px;
+    margin-bottom: 2%;
+}
+
+.productinfo{
+    width: 50%;
+    font-size: 15px;
+    line-height: 25px;
+    color: #c4c4c4;
+    margin-bottom: 5%;
+}
+
+.introimg{
+    width: 708px;
+    height: 886px;
+    z-index: -1;
+    object-fit:cover;
+}
+
+.btnproduct{
+    width: 160px;
+    height: 48px;
+    background-color: var(--darkbrown);
+    color: var(--White);
+    text-transform: uppercase;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+.btnproduct:hover{
+    background-color: var(--lightbrown);
+}
+
+.homecategorymobile{
+    display: none;
+}
+
+.homecategory{
+    background-color: var(--White);
+    height: 50vh;
+    margin-top: 5%;
+    padding-top: 7%;
+    /* padding-left: 10%; */
+
+    
+}
+
+.homecategorycontainer{
+    width: 1110px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: 3%;
+    height: 284px;
+}
+
+.category{
+    background-color: var(--lightgray);
+    /* width: 20%; */
+    width: 350px;
+    text-align: center;
+    /* height: 20vh; */
+    height: 204px;
+}
+
+.categoryheading{
+    margin-bottom: 2%;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 1.29px;
+}
+
+.categoryshop{
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.innercategory{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:3%
+}
+
+.categoryimg{
+    margin-top: -15%;
+    width: 125px;
+    height: 126px;
+    object-fit: contain;
+    
+}
+
+.ovalshadow{
+    width: 122px;
+    height: 18px;
+    margin-top: -2%;
+}
+
+.categorytopinner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+
+.mainproduct{
+    background-color: var(--White);
+    height: 70vh;
+    /* padding-top: 10%; */
+    /* padding-left: 18.75%; */
+    /* margin-bottom: 10%; */
+}
+
+.mainproductmobile{
+    display: none;
+}
+
+.productshowcase{
+    /* width: 80%; */
+    width: 1110px;
+    /* height: 30vh; */
+    height: 560px;
+    background-color: var(--darkbrown);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.productshowcaseimg{
+    width: 410px;
+    height: 493px;
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    overflow: hidden;
+}
+
+.leftside{
+    background-image: url('./assets/home/desktop/pattern-circles.svg');
+    background-position: center;
+}
+
+.rightside{
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    width: 30%;
+}
+
+.righheading{
+    font-size: 56px;
+    line-height: 58px;
+    letter-spacing: 2px;
+    color: var(--White);
+    text-transform: uppercase;
+    margin-bottom: 5%;
+}
+
+.rightpara{
+    color: #FDDFD2;
+    margin-bottom: 15%;
+    font-size: 15px;
+}
+
+.productbtn{
+    width: 160px;
+    height: 48px;
+    background-color: var(--black);
+    color: var(--White);
+    outline: none;
+    border: none;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.group4{
+    /* width: 444px; */
+    /* height: 444px; */
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+}
+
+.mainspeaker{
+    background-color: var(--White);
+    height: 50vh;
+    margin-top: -13%;
+    padding-top: 7%;   
+}
+
+.mainspeakermobile{
+    display: none;
+}
+
+.speakershowcase{
+    width: 1110px;
+    height: 320px;
+    background-image: url(./assets/home/desktop/image-speaker-zx7.jpg);
+    margin: 0 auto;
+    border-radius: 10px;
+    position: relative;
+}
+
+.mainspeakerdetail{
+    position: absolute;
+    top: 30%;
+    left: 8%;
+}
+
+.speakername,.earphonename{
+    font-size: 28px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10%;
+}
+
+.speakerbtn,.earphonebtn{
+    width: 160px;
+    height: 48px;
+    background-color: transparent;
+    outline: none;
+    border-color: var(--black);
+    text-transform: uppercase;
+    color: var(--black);
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.earphonesection{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--White);
+    height: 50vh;
+    margin-top: -9%;
+    padding-top: 7%;   
+    gap:1.5%;
+}
+
+.earphonesectionmobile{
+    display: none;
+}
+
+.innerleftsection{
+    background-image: url(./assets/home/desktop/image-earphones-yx1.jpg);
+    width: 540px;
+    height: 320px;
+}
+
+.innerrightsection{
+    width: 540px;
+    height: 320px;
+    background-color: var(--lightgray);
+    position: relative;
+}
+
+.mainearphonedetail{
+    position: absolute;
+    top: 35%;
+    left: 18%;
+}
+
+.audiosection{
+    background-color: var(--White);
+    height: 80vh;
+    padding-top: 7%; 
+}
+
+.audiosectionmobile{
+    display: none;
+}
+
+.audiosectioncontainer{
+    width: 1110px;
+    height: 588px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.audioheading{
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 44px;
+    letter-spacing: 1.43px;
+    width: 70%;
+    text-transform: uppercase;
+    margin-bottom: 5%;
+}
+
+.audiopara{
+    font-size: 15px;
+    line-height: 25px;
+    width: 77%;
+}
+
+.bestgear{
+    border-radius: 10px;
+}
+
+.bestspan{
+    color: var(--darkbrown);
+}
+
+.desktopfooter{
+    padding-top: 5%;
+    /* width: 1440px; */
+    height: 365px;
+    position: relative;
+}
+
+.line{
+    position: absolute;
+    top: 0%;
+    left: 10%;
+}
+
+.mobilefooter{
+    display: none;
+}
+
+.footernav{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footerlinks{
+    color: var(--White);
+    position: absolute;
+    right: 16%;
+    cursor: pointer;
+}
+
+.footerul{
+    list-style: none;
+    display: flex;
+    gap:10%;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+.footerpara{
+    width: 38%;
+    color: var(--White);
+    padding-left: 10%;
+    padding-top: 3%;
+}
+
+.sociallinks{
+    position: absolute;
+    right: 11%;
+    display: flex;
+    flex-direction: row;
+    gap: 15%;
+}
+
+.copyright{
+    color: var(--Coolgray);
+    padding-left: 10%;
+    padding-top: 3%;
+}
+
+@media (max-width:375px) {
+    .desktop{
+        display: none;
+    }
+    
+    .mobile{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        border-bottom: 1px solid #414141;
+    }
+
+    .intro{
+        display: none;
+        /* color: var(--White);
+        height: 70vh;
+        background-position: center;
+        background-size: cover;
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center; */
+    }
+    
+    .intromobile{
+        display: flex;
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center;
+        text-align: center;
+        background-image: url(./assets/home/mobile/Bitmap\ \(1\).png);
+        background-position: center;
+        background-size: cover;
+        width: 375px;
+        height: 560px;
+    }
+
+    .taglinemobile{
+        text-transform: uppercase;
+        letter-spacing: 0.4rem;
+        color: #818181;
+        font-size: 14px;
+        margin-bottom: 2%;
+    }
+
+    .introproductmobile{
+        font-size: 36px;
+        /* width: 90%; */
+        text-transform: uppercase;
+        letter-spacing: 1.29px;
+        line-height: 40px;
+        margin-bottom: 2%;
+        color: var(--White);
+    }
+
+    .productinfomobile{
+        width: 70%;
+        margin: 0 auto;
+        font-size: 15px;
+        line-height: 25px;
+        color: #c4c4c4;
+        margin-bottom: 5%;
+    }
+
+    .btnproductmobile{
+        width: 160px;
+        height: 48px;
+        background-color: var(--darkbrown);
+        color: var(--White);
+        text-transform: uppercase;
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+    }
+    
+    .btnproductmobile:hover{
+        background-color: var(--lightbrown);
+    }
+
+    .homecategory{
+        display: none;
+    }
+    
+    .homecategorymobile{
+        display: flex;
+        background-color: var(--White);
+        margin-top: 5%;
+        padding-top: 25%;
+        /* padding-left: 10%; */
+
+        
+    }
+
+    .homecategorycontainermobile{
+        width: 327px;
+        height: 683px;
+        margin: 0 auto;
+    }
+
+    .categorymobile{
+        background-color: var(--lightgray);
+        /* width: 20%; */
+        width: 327px;
+        text-align: center;
+        /* height: 20vh; */
+        height: 165px;
+        margin-bottom: 20%;
+    }
+
+    .categoryimgmobile{
+        margin-top: -15%;
+        width: 79px;
+        height: 104px;
+        object-fit: cover;
+    }
+
+    .mainproductmobile{
+        display: flex;
+        background-color: var(--White);
+        height: 90vh;
+        /* padding-top: 10%; */
+        /* padding-left: 18.75%; */
+        /* margin-bottom: 10%; */
+    }
+
+    .productshowcasemobile{
+        width: 327px;
+        height: 600px;
+        
+        
+        background-color: var(--darkbrown);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        border-radius: 10px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .productshowcaseimg{
+        width: 172px;
+        height: 207px;
+        position: absolute;
+        bottom: 0;
+        top: 10%;
+        left: 20%;
+        overflow: hidden;
+    }
+
+    .rightsidemobile{
+        position: absolute;
+        top: 50%;
+    }
+
+    .righheadingmobile{
+        width: 50%;
+        margin: 0 auto;
+        font-size: 36px;
+        line-height: 40px;
+        letter-spacing: 1.29px;
+        color: var(--White);
+        text-transform: uppercase;
+        margin-bottom: 5%;
+    }
+
+    .rightparamobile{
+        color: #FDDFD2;
+        font-size: 15px;
+        line-height: 25px;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .productbtnmobile{
+        margin-top: 10%;
+        width: 160px;
+        height: 48px;
+        background-color: var(--black);
+        color: var(--White);
+        outline: none;
+        border: none;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .leftsidemobile{
+        background-image: url('./assets/home/desktop/mobilecircles.svg');
+        background-position: center;
+    }
+
+    .mainproduct{
+        display: none;
+    }
+
+    .mainspeaker{
+        display: none;
+    }
+
+    .mainspeakermobile{
+        display: flex;
+        background-color: var(--White);
+        height: 50vh;
+        /* margin-top: 35%; */
+        /* padding-top: 7%;    */
+    }
+
+    .speakershowcasemobile{
+        width: 327px;
+        height: 320px;
+        background-image: url(./assets/home/mobile/image-speaker-zx7.jpg);
+        background-position: center;
+        background-size: cover;
+        margin: 0 auto;
+        border-radius: 10px;
+        position: relative;
+    }
+
+    .earphonesection{
+        display: none;
+    }
+
+    .earphonesectionmobile{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--White);
+        height: 50vh;
+        margin-top: -9%;
+        padding-top: 7%;   
+        gap:1.5%;
+    }
+
+    .innerleftsectionmobile{
+        background-image: url(./assets/home/mobile/image-earphones-yx1.jpg);
+        width: 327px;
+        height: 200px;
+        background-position: center;
+        background-size: cover;
+        margin-bottom: 5%;
+    }
+
+    .innerrightsectionmobile{
+        width: 327px;
+        height: 200px;
+        background-color: var(--lightgray);
+        position: relative;
+    }
+
+    .mainearphonedetailmobile{
+        position: absolute;
+        top: 15%;
+        left: 8%;
+    }
+
+    .audiosectionmobile{
+        display: flex;
+        background-color: var(--White);
+        height: 130vh;
+        padding-top: 47%; 
+    }
+
+    .audiosectioncontainermobile{
+        width: 327px;
+        height: 698px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bestgear{
+        /* border-radius: 10px; */
+        width: 327px;
+        height: 300px;
+    }
+
+    .audiosection{
+        display: none;
+    }
+
+    .audiosectiondetailmobile{
+        text-align: center;
+    }
+
+    .audioheadingmobile{
+        margin-top: 10%;
+        font-size: 28px;
+        font-weight: bold;
+        /* line-height: 44px; */
+        letter-spacing: 1px;
+        /* width: 70%; */
+        text-transform: uppercase;
+        margin-bottom: 5%;
+    }
+    
+    .audioparamobile{
+        font-size: 15px;
+        line-height: 25px;
+        width: 96%;
+        margin: 0 auto;
+    }
+
+    .desktopfooter{
+        display: none;
+    }
+
+    .mobilefooter{
+        display: flex;
+        width: 375px;
+        padding-top: 5%;
+        height: 654px;
+        position: relative;
+    }
+
+    .footernavmobile{
+        text-align: center;
+        /* width: 80%; */
+        /* margin: 0 auto; */
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center;
+        align-items: center; */
+    }
+
+    .mobilelogo{
+        position: absolute;
+        top: 10%;
+        left: 30%;
+    }
+
+    
+    .footerlinksmobile{
+        color: var(--White);
+        position: absolute;
+        left: 34%;
+        top: 20%;
+        cursor: pointer;
+    }
+
+        
+    .footerulmobile{
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+    }
+
+    .footerulmobile > li{
+        margin-bottom: 20%;
+        font-size: 13px;
+        font-weight: bold;
+        line-height: 25px;
+        letter-spacing: 2px;
+    }
+
+    .footerparamobile{
+        /* width: 38%; */
+        color: #696969;
+        padding-left: 10%;
+        padding-top: 3%;
+        position: absolute;
+        top: 50%;
+        width: 327px;
+        height: 150px;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 25px;
+        font-size: 15px;
+    }
+
+    .copyright{
+        color: #696969;
+        padding-left: 10%;
+        padding-top: 3%;
+        position: absolute;
+        top: 80%;
+        /* text-align: center; */
+        left: 4%;
+    }
+
+    .sociallinks{
+        position: absolute;
+        /* right: 11%; */
+        display: flex;
+        flex-direction: row;
+        gap: 15%;
+        bottom: 5%;
+        left: 30%;
+    }
+
+    .line{
+        position: absolute;
+        top: 0%;
+        left: 35%;
+    }
+}
