@@ -154,6 +154,12 @@ li:hover{
     color: var(--White);
     border: none;
     outline: none;
+    text-transform: uppercase;
+}
+
+.productbtn:hover{
+    background-color: var(--lightbrown);
+    cursor: pointer;
 }
 
 /* headphoneproducts section ends */
@@ -374,7 +380,58 @@ li:hover{
     right: 11%;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     gap: 15%;
+}
+
+.fblink {
+    cursor: pointer;
+    position: relative;
+}
+
+.fblink .hoverImage {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.fblink:hover .hoverImage {
+    display: block;
+}
+
+
+.twitterlink {
+    cursor: pointer;
+    position: relative;
+}
+
+.twitterlink .hoverImage {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.twitterlink:hover .hoverImage {
+    display: block;
+}
+
+.instalink {
+    cursor: pointer;
+    position: relative;
+}
+
+.instalink .hoverImage {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.instalink:hover .hoverImage {
+    display: block;
 }
 
 .copyright{
@@ -663,7 +720,7 @@ li:hover{
         flex-direction: row;
         gap: 15%;
         bottom: 5%;
-        left: 30%;
+        left: 10%;
     }
 
     .line{
