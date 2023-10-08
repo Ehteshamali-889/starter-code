@@ -644,6 +644,122 @@ a:hover{
 
 /* footer section ends */
 
+
+/* cart section starts */
+
+/* Styles for the modal */
+#cartModal {
+    display: none;
+    position: fixed;
+    top: 15%;
+    right: 10%;
+    background-color: white;
+    z-index: 9999;
+    /* padding: 20px; */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.cartcontainer{
+    width: 377px;
+    height: 488px;
+}
+
+/* Styles for the close button (you can add this button to close the modal) */
+#closeModal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.topcartsection,.bottomcartsection{
+    width: 313px;
+    height: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10%;
+    padding-left: 10%;
+}
+
+.productlist{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10%;
+}
+
+.productitem{
+    width: 313px;
+    height: 64px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6%;
+    padding-right: 8%;
+}
+
+.productitemcontainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10%;
+    width: 280px;
+}
+
+.imgcontainer{
+    width: 64px;
+    height: 64px;
+    background-color: var(--White);
+}
+
+.productimage{
+    width: 64px;
+    height: 64px;
+}
+
+.productsmallinfo{
+    display: flex;
+    flex-direction: column;
+}
+
+.lastsection{
+    width: 313px;
+    height: 48px;
+    padding-top: 10%;
+    padding-left: 10%;
+}
+
+.checkoutbtn{
+    width: 283px;
+    height: 48px;
+    background-color: var(--darkbrown);
+    border: none;
+    outline: none;
+    color: var(--White);
+}
+
+.changecount{
+    width: 96px;
+    height: 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--lightgray);
+}
+
+.removeall{
+    font-size: 15px;
+    line-height: 25px;
+    /* color: var(--lightgray); */
+}
+
+/* cart section ends */
+
 @media (max-width:375px) {
     /* Header Code  starts*/
     .desktop{

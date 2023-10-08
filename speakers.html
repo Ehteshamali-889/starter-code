@@ -34,6 +34,88 @@
     <h1 class="mainheading">Speakers</h1>
   </section>
 
+  <section class="cart" id="cartModal">
+    <article class="cartcontainer">
+      <!-- <button id="closeModal" onclick="closeModal()">Close</button> -->
+      <article class="topcartsection">
+        <h3>Cart(3)</h3>
+        <p class="removeall">Remove All</p>
+      </article>
+      <article class="productlist">
+        <article class="productitem">
+          <article class="productitemcontainer">
+            <article class="imgcontainer">
+              <img src="./assets/cart/image-xx99-mark-two-headphones.jpg" alt="twoheadphone" class="productimage">
+            </article>
+            <article class="productsmallinfo">
+              <h3>XX99 MK II </h3>
+              <p>$2,999</p>
+            </article>
+          </article>
+          
+          
+          <article class="changecount">
+            <p class="min">-</p>
+            <p>1</p>
+            <p class="max">+</p>
+          </article>
+        </article>
+  
+        <article class="productitem">
+          <article class="productitemcontainer">
+            <article class="imgcontainer">
+              <img src="./assets/cart/image-xx59-headphones.jpg" alt="twoheadphone" class="productimage">
+            </article>
+            <article class="productsmallinfo">
+              <h3>XX59</h3>
+              <p>$899</p>
+            </article>
+            
+            
+          </article>
+          <article class="changecount">
+            <p class="min">-</p>
+            <p>2</p>
+            <p class="max">+</p>
+          </article>
+        </article>
+  
+        <article class="productitem">
+          <article class="productitemcontainer">
+            <article class="imgcontainer">
+              <img src="./assets/cart/image-yx1-earphones.jpg" alt="twoheadphone" class="productimage">
+            </article>
+            <article class="productsmallinfo">
+              <h3>YX1</h3>
+              <p>$599</p>
+            </article>
+            
+            
+          </article>
+          <article class="changecount">
+            <p class="min">-</p>
+            <p>1</p>
+            <p class="max">+</p>
+          </article>
+        </article>
+      </article>
+      
+
+      <article class="bottomcartsection">
+        <p>Total</p>
+        <h3> $5,396</h3>
+      </article>
+
+      <article class="lastsection">
+        <button class="checkoutbtn">Checkout</button>
+      </article>
+      
+
+    </article>    
+  
+    
+  </section>
+
   <section class="headphoneproducts">
     <article class="product-1">
       <article class="imagecontainer">
@@ -275,6 +357,68 @@
     </article>
    
   </footer>
+  <script>
+    // Get a reference to the button element
+    const mark1 = document.getElementById("mark1");
+
+    // Add a click event listener to the button
+    mark1.addEventListener("click", function() {
+      // Redirect to the "product.html" page
+      window.location.href = "product-xx99-mark-one-headphones.html";
+    });
+
+    // Get a reference to the button element
+    const p59 = document.getElementById("p59");
+
+    // Add a click event listener to the button
+    p59.addEventListener("click", function() {
+      // Redirect to the "product.html" page
+      window.location.href = "product-xx59-headphones.html";
+    });
+
+    // Get a reference to the button element
+    const z9speaker = document.getElementById("z9speaker");
+
+    // Add a click event listener to the button
+    z9speaker.addEventListener("click", function() {
+      // Redirect to the "product.html" page
+      window.location.href = "product-zx9-speaker.html";
+    });
+
+    // Get a reference to the "Go Back" element
+    const goBackButton = document.getElementById("goBackButton");
+
+    // Add a click event listener to the element
+    goBackButton.addEventListener("click", function() {
+      // Use window.history.back() to navigate back to the previous page
+      window.history.back();
+    });
+
+    // JavaScript functions to open and close the modal
+    function openModal() {
+        document.getElementById('cartModal').style.display = 'block';
+        // Add a temporary event listener to close modal when clicking outside
+        setTimeout(function() {
+            window.addEventListener('mouseup', closeModalOutside);
+        }, 0);
+    }
+
+    function closeModal() {
+        document.getElementById('cartModal').style.display = 'none';
+        // Remove the event listener when closing the modal
+        window.removeEventListener('mouseup', closeModalOutside);
+    }
+
+    // Close the modal when clicked outside
+    function closeModalOutside(event) {
+        const modal = document.getElementById('cartModal');
+        if (event.target !== modal && !modal.contains(event.target)) {
+            closeModal();
+        }
+    }
+
+
+  </script>
   <!-- Home
   Headphones
   Speakers

@@ -22,13 +22,95 @@
         <li><a href="earphones.html">Earphones</a></li>
       </ul>
     </nav>
-    <img src="./assets/shared/desktop/icon-cart.svg" alt="cart">
+    <img src="./assets/shared/desktop/icon-cart.svg" alt="cart" id="openModal" onclick="openModal()">
   </header>
   <header class="mobile">
     <img src="./assets/shared/tablet/icon-hamburger.svg" alt="hamburger">
     <img src="./assets/shared/desktop/logo.svg" alt="logo">
-    <img src="./assets/shared/desktop/icon-cart.svg" alt="cart">
+    <img src="./assets/shared/desktop/icon-cart.svg" alt="cart" id="openModal" onclick="openModal()">
   </header>
+
+  <section class="cart" id="cartModal">
+    <article class="cartcontainer">
+      <!-- <button id="closeModal" onclick="closeModal()">Close</button> -->
+      <article class="topcartsection">
+        <h3>Cart(3)</h3>
+        <p class="removeall">Remove All</p>
+      </article>
+      <article class="productlist">
+        <article class="productitem">
+          <article class="productitemcontainer">
+            <article class="imgcontainer">
+              <img src="./assets/cart/image-xx99-mark-two-headphones.jpg" alt="twoheadphone" class="productimage">
+            </article>
+            <article class="productsmallinfo">
+              <h3>XX99 MK II </h3>
+              <p>$2,999</p>
+            </article>
+          </article>
+          
+          
+          <article class="changecount">
+            <p class="min">-</p>
+            <p>1</p>
+            <p class="max">+</p>
+          </article>
+        </article>
+  
+        <article class="productitem">
+          <article class="productitemcontainer">
+            <article class="imgcontainer">
+              <img src="./assets/cart/image-xx59-headphones.jpg" alt="twoheadphone" class="productimage">
+            </article>
+            <article class="productsmallinfo">
+              <h3>XX59</h3>
+              <p>$899</p>
+            </article>
+            
+            
+          </article>
+          <article class="changecount">
+            <p class="min">-</p>
+            <p>2</p>
+            <p class="max">+</p>
+          </article>
+        </article>
+  
+        <article class="productitem">
+          <article class="productitemcontainer">
+            <article class="imgcontainer">
+              <img src="./assets/cart/image-yx1-earphones.jpg" alt="twoheadphone" class="productimage">
+            </article>
+            <article class="productsmallinfo">
+              <h3>YX1</h3>
+              <p>$599</p>
+            </article>
+            
+            
+          </article>
+          <article class="changecount">
+            <p class="min">-</p>
+            <p>1</p>
+            <p class="max">+</p>
+          </article>
+        </article>
+      </article>
+      
+
+      <article class="bottomcartsection">
+        <p>Total</p>
+        <h3> $5,396</h3>
+      </article>
+
+      <article class="lastsection">
+        <button class="checkoutbtn">Checkout</button>
+      </article>
+      
+
+    </article>    
+  
+    
+  </section>
 
   <section class="headphoneproducts">
     <p class="gobackbtn" id="goBackButton">Go Back</p>
@@ -361,80 +443,7 @@
     </article>
    
   </footer>
-  <!-- Home
-  Headphones
-  Speakers
-  Earphones
-
-  Go back
-
-  New product
-
-  XX99 Mark II Headphones
-  The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your 
-  premium headphone experience by reproducing the balanced depth and precision of 
-  studio-quality sound.
-
-  $2,999
-  1
-  Add to cart
-
-  Features
-  Featuring a genuine leather head strap and premium earcups, these headphones deliver superior 
-  comfort for those who like to enjoy endless listening. It includes intuitive controls designed 
-  for any situation. Whether you’re taking a business call or just in your own personal space, the 
-  auto on/off and pause features ensure that you’ll never miss a beat.
-
-  The advanced Active Noise Cancellation with built-in equalizer allow you to experience your audio 
-  world on your terms. It lets you enjoy your audio in peace, but quickly interact with your surroundings 
-  when you need to. Combined with Bluetooth 5. 0 compliant connectivity and 17 hour battery life, the 
-  XX99 Mark II headphones gives you superior sound, cutting-edge technology, and a modern design aesthetic.
-
-  In the box
-
-  1x Headphone unit
-  2x Replacement earcups
-  1x User manual
-  1x 3.5mm 5m audio cable
-  1x Travel bag
-
-  You may also like
-
-  XX99 Mark I
-  See product
-
-  XX59
-  See product
-
-  ZX9 speaker
-  See product
-
-  Headphones
-  Shop
   
-  Speakers
-  Shop
-  
-  Earphones
-  Shop
-
-  Bringing you the best audio gear
-  Located at the heart of New York City, Audiophile is the premier store for high end headphones,
-  earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration
-  rooms available for you to browse and experience a wide range of our products. Stop by our store
-  to meet some of the fantastic people who make Audiophile the best place to buy your portable
-  audio equipment.
-
-  Home
-  Headphones
-  Speakers
-  Earphones
-
-  Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers
-  and sound specialists who are devoted to helping you get the most out of personal audio. Come and
-  visit our demo facility - we’re open 7 days a week.
-
-  Copyright 2021. All Rights Reserved -->
   <script>
     // Get a reference to the button element
     const mark1 = document.getElementById("mark1");
@@ -471,6 +480,29 @@
       // Use window.history.back() to navigate back to the previous page
       window.history.back();
     });
+
+    // JavaScript functions to open and close the modal
+    function openModal() {
+        document.getElementById('cartModal').style.display = 'block';
+        // Add a temporary event listener to close modal when clicking outside
+        setTimeout(function() {
+            window.addEventListener('mouseup', closeModalOutside);
+        }, 0);
+    }
+
+    function closeModal() {
+        document.getElementById('cartModal').style.display = 'none';
+        // Remove the event listener when closing the modal
+        window.removeEventListener('mouseup', closeModalOutside);
+    }
+
+    // Close the modal when clicked outside
+    function closeModalOutside(event) {
+        const modal = document.getElementById('cartModal');
+        if (event.target !== modal && !modal.contains(event.target)) {
+            closeModal();
+        }
+    }
 
 
   </script>
