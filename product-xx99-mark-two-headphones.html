@@ -8,10 +8,360 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
 
   <title>Frontend Mentor | Audiophile e-commerce website</title>
+  <link rel="stylesheet" href="producttwo.css">
 </head>
 
 <body>
-  Home
+  <header class="desktop">
+    <img src="./assets/shared/desktop/logo.svg" alt="logo">
+    <nav class="topnav">
+      <ul class="toplinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="headphones.html">Headphones</a></li>
+        <li><a href="speakers.html">Speakers</a></li>
+        <li><a href="earphones.html">Earphones</a></li>
+      </ul>
+    </nav>
+    <img src="./assets/shared/desktop/icon-cart.svg" alt="cart">
+  </header>
+  <header class="mobile">
+    <img src="./assets/shared/tablet/icon-hamburger.svg" alt="hamburger">
+    <img src="./assets/shared/desktop/logo.svg" alt="logo">
+    <img src="./assets/shared/desktop/icon-cart.svg" alt="cart">
+  </header>
+
+  <section class="headphoneproducts">
+    <p class="gobackbtn" id="goBackButton">Go Back</p>
+    <article class="product-1">
+      <article class="imagecontainer">
+        <img src="./assets/shared/desktop/image-xx99-mark-two-headphones.jpg" alt="headphone" class="sellitem">
+      </article>
+      
+      <article class="productinfo">
+        <p class="productinfotagline">New product</p>
+        <h2 class="productinfoheading">XX99 Mark II Headphones</h2>
+        <p class="productinfopara">The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your 
+          premium headphone experience by reproducing the balanced depth and precision of 
+          studio-quality sound.</p>
+        <h3 class="price">$2,999</h3>
+        <article class="btnhub">
+          <article class="collectionbtn">
+            <p class="min">-</p>
+            <p>1</p>
+            <p class="max">+</p>
+          </article>
+          <button class="productbtn">See product</button>
+        </article>
+        
+      </article>
+    </article>
+    
+    
+  </section>
+
+  <section class="headphonedescription">
+    <article class="feature">
+      <article class="featureleft">
+        <h3 class="featureheading">Features</h3>
+        <p>Featuring a genuine leather head strap and premium earcups, these headphones deliver superior 
+          comfort for those who like to enjoy endless listening. It includes intuitive controls designed 
+          for any situation. Whether you’re taking a business call or just in your own personal space, the 
+          auto on/off and pause features ensure that you’ll never miss a beat.
+        </p>
+        <br>
+        <p>The advanced Active Noise Cancellation with built-in equalizer allow you to experience your audio 
+          world on your terms. It lets you enjoy your audio in peace, but quickly interact with your surroundings 
+          when you need to. Combined with Bluetooth 5. 0 compliant connectivity and 17 hour battery life, the 
+          XX99 Mark II headphones gives you superior sound, cutting-edge technology, and a modern design aesthetic.</p>
+      </article>
+      <article class="featureright">
+        <h3 class="inthboxheading">In the box</h3>
+        <ul class="individualfeature">
+          <li>
+            <span class="multiple">1x</span> <span class="info">Headphone unit</span>
+          </li>
+          <li>
+            <span class="multiple">2x</span> <span class="info">Replacement earcups</span>
+          </li>
+          <li>
+            <span class="multiple">1x</span> <span class="info">User manual</span>
+          </li>
+          <li>
+            <span class="multiple">1x</span> <span class="info">3.5mm 5m audio cable</span>
+          </li>
+          <li>
+            <span class="multiple">1x</span> <span class="info">Travel bag</span>
+          </li>
+        </ul>
+        
+      </article>
+    </article>
+  </section> 
+
+  <section class="productgallery">
+    <article class="galleryhub">
+      <article class="leftgalleryhub">
+        <img src="./assets/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg" alt="person" class="galleryimg firstimg">
+        <img src="./assets/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg" alt="headphone" class="galleryimg">
+      </article>
+      <article class="rightgalleryhub">
+        <img src="./assets/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg" alt="mainheadphone" class="mainimg">
+      </article>
+    </article>
+  </section>
+
+
+  <section class="productgallerymobile">
+    <article class="galleryhub">
+      <article class="leftgalleryhub">
+        <img src="./assets/product-xx99-mark-two-headphones/mobile/image-gallery-1.jpg" alt="person" class="galleryimg firstimg">
+        <img src="./assets/product-xx99-mark-two-headphones/mobile/image-gallery-2.jpg" alt="headphone" class="galleryimg">
+      </article>
+      <article class="rightgalleryhubmobile">
+        <img src="./assets/product-xx99-mark-two-headphones/mobile/image-gallery-3.jpg" alt="mainheadphone" class="mainimgmobile">
+      </article>
+    </article>
+  </section>
+
+  <section class="alsolike">
+    <article class="alsolikecontainer">
+      <h3 class="alsolikeheading">You may also like</h3>
+      <article class="inneralsolike">
+        <article class="innercontainer">
+          <article class="likeimgcontainer">
+            <img src="./assets/shared/desktop/image-xx99-mark-one-headphones.jpg" alt="oneheadphone" class="likeimg">
+          </article>
+          
+          <h3 class="likeheading">XX99 Mark I</h3>
+          <button class="seebtn" id="mark1">See product</button>
+        </article>
+
+        <article class="innercontainer">
+          <article class="likeimgcontainer">
+            <img src="./assets/shared/desktop/image-xx59-headphones.jpg" alt="oneheadphone" class="likeimg">
+          </article>
+          
+          <h3 class="likeheading">XX59</h3>
+          <button class="seebtn" id="p59">See product</button>
+        </article>
+
+        <article class="innercontainer">
+          <article class="likeimgcontainer">
+            <img src="./assets/shared/desktop/image-zx9-speaker.jpg" alt="oneheadphone" class="likeimg">
+          </article>
+          
+          <h3 class="likeheading">ZX9 speaker</h3>
+          <button class="seebtn" id="z9speaker">See product</button>
+        </article>
+      </article>
+    </article>
+  </section>
+
+  <section class="homecategory">
+    <article class="homecategorycontainer">
+      <article class="category">
+        <article class="categorytopinner">
+          <img src="./assets/home/desktop/categoryheadset.png" alt="headphone" class="categoryimg">
+          <img src="./assets/home/desktop/Oval.png" alt="oval" class="ovalshadow">
+        </article>
+        
+        <h2 class="categoryheading">Headphones</h2>
+        <article class="innercategory">
+          <p class="categoryshop">Shop</p>
+          <img src="./assets/shared/desktop/icon-arrow-right.svg" >
+        </article>
+      </article>
+  
+      <article class="category">
+        <article class="categorytopinner">
+          <img src="./assets/home/desktop/speakercategory.png" alt="headphone" class="categoryimg">
+          <img src="./assets/home/desktop/Oval.png" alt="oval" class="ovalshadow">
+        </article>
+        
+        <h2 class="categoryheading">Speakers</h2>
+        <article class="innercategory">
+          <p class="categoryshop">Shop</p>
+          <img src="./assets/shared/desktop/icon-arrow-right.svg" >
+        </article>
+        
+      </article>
+  
+      <article class="category">
+        <article class="categorytopinner">
+          <img src="./assets/home/desktop/Group 5.png" alt="headphone" class="categoryimg">
+          <img src="./assets/home/desktop/Oval.png" alt="oval" class="ovalshadow">
+        </article>
+        
+        <h2 class="categoryheading">Earphones</h2>
+        <article class="innercategory">
+          <p class="categoryshop">Shop</p>
+          <img src="./assets/shared/desktop/icon-arrow-right.svg" >
+        </article>
+        
+      </article>
+    </article>
+    
+    
+  </section>
+
+  <section class="homecategorymobile">
+    <article class="homecategorycontainermobile">
+      <article class="categorymobile">
+        <article class="categorytopinner">
+          <img src="./assets/home/desktop/categoryheadset.png" alt="headphone" class="categoryimg">
+          <img src="./assets/home/desktop/Oval.png" alt="oval" class="ovalshadow">
+        </article>
+        <h2 class="categoryheading">Headphones</h2>
+        <article class="innercategory">
+          <p class="categoryshop">Shop</p>
+          <img src="./assets/shared/desktop/icon-arrow-right.svg" >
+        </article>
+      </article>
+  
+      <article class="categorymobile">
+        <article class="categorytopinner">
+          <img src="./assets/home/desktop/speakercategory.png" alt="headphone" class="categoryimg">
+          <img src="./assets/home/desktop/Oval.png" alt="oval" class="ovalshadow">
+        </article>
+        <h2 class="categoryheading">Speakers</h2>
+        <article class="innercategory">
+          <p class="categoryshop">Shop</p>
+          <img src="./assets/shared/desktop/icon-arrow-right.svg" >
+        </article>
+      </article>
+  
+      <article class="categorymobile">
+        <article class="categorytopinner">
+          <img src="./assets/home/desktop/Group 5.png" alt="headphone" class="categoryimg">
+          <img src="./assets/home/desktop/Oval.png" alt="oval" class="ovalshadow">
+        </article>
+        <h2 class="categoryheading">Earphones</h2>
+        <article class="innercategory">
+          <p class="categoryshop">Shop</p>
+          <img src="./assets/shared/desktop/icon-arrow-right.svg" >
+        </article>
+      </article>
+    </article>
+    
+    
+  </section>
+
+  <section class="audiosection">
+    <article class="audiosectioncontainer">
+      <article>
+        <h2 class="audioheading">Bringing you the <span class="bestspan">best</span> audio gear</h2>
+        <p class="audiopara">Located at the heart of New York City, Audiophile is the premier store for high end headphones, 
+          earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration 
+          rooms available for you to browse and experience a wide range of our products. Stop by our store 
+          to meet some of the fantastic people who make Audiophile the best place to buy your portable 
+          audio equipment.</p>
+      </article>
+      <img src="./assets/shared/desktop/image-best-gear.jpg" alt="bestgear" class="bestgear">
+    </article>
+    
+  </section>
+  
+  <section class="audiosectionmobile">
+    <article class="audiosectioncontainermobile">
+      <article class="audiosectiondetailmobile">
+        <h2 class="audioheadingmobile">Bringing you the <span class="bestspan">best</span> audio gear</h2>
+        <p class="audioparamobile">Located at the heart of New York City, Audiophile is the premier store for high end headphones, 
+          earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration 
+          rooms available for you to browse and experience a wide range of our products. Stop by our store 
+          to meet some of the fantastic people who make Audiophile the best place to buy your portable 
+          audio equipment.</p>
+      </article>
+      <img src="./assets/home/mobile/man.png" alt="bestgear" class="bestgear">
+    </article>
+    
+  </section>
+
+  <section class="spacing">
+  </section>
+  <footer class="desktopfooter">
+    <img src="./assets/shared/desktop/Rectangle.png" alt="line" class="line">
+    <article class="footernav">
+      <img src="./assets/shared/desktop/logo.svg" alt="logo" class="footerlogo">
+      <nav class="footerlinks">
+        <ul class="footerul">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="headphones.html">Headphones</a></li>
+          <li><a href="speakers.html">Speakers</a></li>
+          <li><a href="earphones.html">Earphones</a></li>
+        </ul>
+      </nav>
+    </article>
+
+    <article class="footerpara">
+      <p>Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers 
+        and sound specialists who are devoted to helping you get the most out of personal audio. Come and 
+        visit our demo facility - we’re open 7 days a week.</p>
+    </article>
+
+    <article class="sociallinks">
+      <div class="fblink">
+        <img src="./assets/shared/desktop/icon-facebook.svg" alt="fb">
+        <img src="./assets/shared/desktop/icon-facebook-hover.svg" alt="fb" class="hoverImage">
+      </div>
+      <div class="twitterlink">
+        <img src="./assets/shared/desktop/icon-twitter.svg" alt="twitter">
+        <img src="./assets/shared/desktop/icon-twitter-hover.svg" alt="fb" class="hoverImage">
+      </div>
+      <div class="instalink">
+        <img src="./assets/shared/desktop/icon-instagram.svg" alt="insta" >
+        <img src="./assets/shared/desktop/icon-instagram-hover.svg" alt="fb" class="hoverImage">
+      </div>
+      
+    </article>
+
+    <article class="copyright">
+      <p>Copyright 2021. All Rights Reserved</p>
+    </article>
+   
+  </footer>
+
+  <footer class="mobilefooter">
+    <img src="./assets/shared/desktop/Rectangle.png" alt="line" class="line">
+    <article class="footernavmobile">
+      <img src="./assets/shared/desktop/logo.svg" alt="logo" class="mobilelogo">
+      <nav class="footerlinksmobile">
+        <ul class="footerulmobile">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="headphones.html">Headphones</a></li>
+          <li><a href="speakers.html">Speakers</a></li>
+          <li><a href="earphones.html">Earphones</a></li>
+        </ul>
+      </nav>
+    </article>
+
+    <article class="footerparamobile">
+      <p>Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers 
+        and sound specialists who are devoted to helping you get the most out of personal audio. Come and 
+        visit our demo facility - we’re open 7 days a week.</p>
+    </article>
+
+    <article class="sociallinks">
+      <div class="fblink">
+        <img src="./assets/shared/desktop/icon-facebook.svg" alt="fb">
+        <img src="./assets/shared/desktop/icon-facebook-hover.svg" alt="fb" class="hoverImage">
+      </div>
+      <div class="twitterlink">
+        <img src="./assets/shared/desktop/icon-twitter.svg" alt="twitter">
+        <img src="./assets/shared/desktop/icon-twitter-hover.svg" alt="fb" class="hoverImage">
+      </div>
+      <div class="instalink">
+        <img src="./assets/shared/desktop/icon-instagram.svg" alt="insta" >
+        <img src="./assets/shared/desktop/icon-instagram-hover.svg" alt="fb" class="hoverImage">
+      </div>
+      
+    </article>
+
+    <article class="copyright">
+      <p>Copyright 2021. All Rights Reserved</p>
+    </article>
+   
+  </footer>
+  <!-- Home
   Headphones
   Speakers
   Earphones
@@ -84,7 +434,46 @@
   and sound specialists who are devoted to helping you get the most out of personal audio. Come and
   visit our demo facility - we’re open 7 days a week.
 
-  Copyright 2021. All Rights Reserved
+  Copyright 2021. All Rights Reserved -->
+  <script>
+    // Get a reference to the button element
+    const mark1 = document.getElementById("mark1");
+
+    // Add a click event listener to the button
+    mark1.addEventListener("click", function() {
+      // Redirect to the "product.html" page
+      window.location.href = "product-xx99-mark-one-headphones.html";
+    });
+
+    // Get a reference to the button element
+    const p59 = document.getElementById("p59");
+
+    // Add a click event listener to the button
+    p59.addEventListener("click", function() {
+      // Redirect to the "product.html" page
+      window.location.href = "product-xx59-headphones.html";
+    });
+
+    // Get a reference to the button element
+    const z9speaker = document.getElementById("z9speaker");
+
+    // Add a click event listener to the button
+    z9speaker.addEventListener("click", function() {
+      // Redirect to the "product.html" page
+      window.location.href = "product-zx9-speaker.html";
+    });
+
+    // Get a reference to the "Go Back" element
+    const goBackButton = document.getElementById("goBackButton");
+
+    // Add a click event listener to the element
+    goBackButton.addEventListener("click", function() {
+      // Use window.history.back() to navigate back to the previous page
+      window.history.back();
+    });
+
+
+  </script>
 </body>
 
 </html>
