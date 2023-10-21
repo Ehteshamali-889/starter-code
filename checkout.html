@@ -8,17 +8,354 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
 
   <title>Frontend Mentor | Audiophile e-commerce website</title>
+  <link rel="stylesheet" href="checkout.css">
 </head>
 
 <body>
-  Home
+  <header class="desktop">
+    <img src="./assets/shared/desktop/logo.svg" alt="logo">
+    <nav class="topnav">
+      <ul class="toplinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="headphones.html">Headphones</a></li>
+        <li><a href="speakers.html">Speakers</a></li>
+        <li><a href="earphones.html">Earphones</a></li>
+      </ul>
+    </nav>
+    <img src="./assets/shared/desktop/icon-cart.svg" alt="cart" id="openModal" onclick="openModal()">
+  </header>
+  <header class="mobile">
+    <img src="./assets/shared/tablet/icon-hamburger.svg" alt="hamburger">
+    <img src="./assets/shared/desktop/logo.svg" alt="logo">
+    <img src="./assets/shared/desktop/icon-cart.svg" alt="cart" id="openModal" onclick="openModal()">
+  </header>
+  <section class="cart" id="cartModal">
+    <article class="cartcontainer">
+      <!-- <button id="closeModal" onclick="closeModal()">Close</button> -->
+      <article class="topcartsection">
+        <h3>Cart(3)</h3>
+        <p class="removeall">Remove All</p>
+      </article>
+      <article class="productlist">
+        <article class="productitem">
+          <article class="productitemcontainer">
+            <article class="imgcontainer">
+              <img src="./assets/cart/image-xx99-mark-two-headphones.jpg" alt="twoheadphone" class="productimage">
+            </article>
+            <article class="productsmallinfo">
+              <h3>XX99 MK II </h3>
+              <p>$2,999</p>
+            </article>
+          </article>
+          
+          
+          <article class="changecount">
+            <p class="min">-</p>
+            <p>1</p>
+            <p class="max">+</p>
+          </article>
+        </article>
+  
+        <article class="productitem">
+          <article class="productitemcontainer">
+            <article class="imgcontainer">
+              <img src="./assets/cart/image-xx59-headphones.jpg" alt="twoheadphone" class="productimage">
+            </article>
+            <article class="productsmallinfo">
+              <h3>XX59</h3>
+              <p>$899</p>
+            </article>
+            
+            
+          </article>
+          <article class="changecount">
+            <p class="min">-</p>
+            <p>2</p>
+            <p class="max">+</p>
+          </article>
+        </article>
+  
+        <article class="productitem">
+          <article class="productitemcontainer">
+            <article class="imgcontainer">
+              <img src="./assets/cart/image-yx1-earphones.jpg" alt="twoheadphone" class="productimage">
+            </article>
+            <article class="productsmallinfo">
+              <h3>YX1</h3>
+              <p>$599</p>
+            </article>
+            
+            
+          </article>
+          <article class="changecount">
+            <p class="min">-</p>
+            <p>1</p>
+            <p class="max">+</p>
+          </article>
+        </article>
+      </article>
+      
+
+      <article class="bottomcartsection">
+        <p>Total</p>
+        <h3> $5,396</h3>
+      </article>
+
+      <article class="lastsection">
+        <button class="checkoutbtn">Checkout</button>
+      </article>
+      
+
+    </article>    
+  
+    
+  </section>
+
+  <section class="checkout">
+    <p class="gobackbtn" id="goBackButton">Go Back</p>
+    <article class="checkoutcontainer"> 
+      <article class="firstpartcheckout">
+        <h2 class="checkoutheading">Checkout</h2>
+        <article class="billingcontainer">
+          <h5 class="billingheading">Billing details</h5>
+          <article class="billingfieldscontainer">
+            <article class="singlefieldbilling">
+              <h5>Name</h5>
+              <input type="text" name="" id="namefield" placeholder="Alexei Ward">
+            </article>
+            <article class="singlefieldbilling">
+              <h5>Email Address</h5>
+              <input type="email" name="" id="emailfield" placeholder="alexei@mail.com">
+            </article>
+          </article>
+          <article class="phonenumbercontainer">
+            <article class="singlefieldbilling">
+              <h5>Phone Number</h5>
+              <input type="text" name="" id="namefield" placeholder="+1 202-555-0136">
+            </article>
+          </article>
+        </article>
+        <!-- shipping -->
+        <article class="shippingconatiner">
+          <h5 class="shippingheading">Shipping info</h5>
+          <article class="addresscontainer">
+            <h5 class="addressheading">Address</h5>
+            <input type="text" name="" id="addressfield" placeholder="1137 Williams Avenue">
+          </article>
+          <article class="zipcityfieldscontainer">
+            <article class="singlefieldbilling">
+              <h5>ZIP Code</h5>
+              <input type="text" name="" id="namefield" placeholder="10001">
+            </article>
+            <article class="singlefieldbilling">
+              <h5>City</h5>
+              <input type="email" name="" id="emailfield" placeholder="New York">
+            </article>
+          </article>
+          <article class="phonenumbercontainer">
+            <article class="singlefieldbilling">
+              <h5>Country</h5>
+              <input type="text" name="" id="namefield" placeholder="United States">
+            </article>
+          </article>
+        </article>
+        <!-- payment details -->
+        <article class="paymentdetailscontainer">
+          <h5 class="shippingheading">Payment details</h5>
+          <article class="paymentmethodcontainer">
+            <h5 class="paymentheading">Payment Method</h5>
+            <article class="paymethods">
+
+              <article class="radiocontainer activera">
+                <input type="radio" name="" id="emoney">
+                <p class="paymethodtext">e-Money</p>
+              </article>
+  
+              <article class="radiocontainer">
+                <input type="radio" name="" id="cash">
+                <p class="paymethodtext">Cash on delivery</p>
+              </article>
+
+            </article>
+            
+            <article class="emoneyfieldcontainer">
+              <article class="singlefieldbilling">
+                <h5>e-Money Number</h5>
+                <input type="number" name="" id="namefield" placeholder="238521993">
+              </article>
+              <article class="singlefieldbilling">
+                <h5>e-Money PIN</h5>
+                <input type="number" name="" id="emailfield" placeholder="6891">
+              </article>
+            </article>
+            
+            
+          </article>
+        </article>
+      </article>
+      <article class="secondpartcheckout">
+        <article class="summary">
+          <h2 class="summaryheading">Summary</h2>
+          <article class="checkoutitemcontainer">
+            <article class="leftsectionitem">
+              <img src="./assets/cart/image-xx99-mark-two-headphones.jpg" alt="" class="checkoutimg">
+              <article>
+                <h3 class="singleitemheading">XX99 MK II</h3>
+                <p class="singleitempara">$ 2,999</p>
+              </article>
+            </article>
+            
+            <p class="itemcount">x1</p>
+          </article>
+
+          <article class="checkoutitemcontainer">
+            <article class="leftsectionitem">
+              <img src="./assets/cart/image-xx59-headphones.jpg" alt="" class="checkoutimg">
+              <article>
+                <h3 class="singleitemheading">XX59</h3>
+                <p class="singleitempara">$ 899</p>
+              </article>
+            </article>
+            
+            <p class="itemcount">x2</p>
+          </article>
+
+          <article class="checkoutitemcontainer">
+            <article class="leftsectionitem">
+              <img src="./assets/cart/image-yx1-earphones.jpg" alt="" class="checkoutimg">
+              <article>
+                <h3 class="singleitemheading">YX1</h3>
+                <p class="singleitempara">$ 599</p>
+              </article>
+            </article>
+            
+            <p class="itemcount">x1</p>
+          </article>
+
+          <article class="summarysubinfo">
+            <p class="subinfoheading">TOTAL</p>
+            <h3 class="subinfototal">$ 5,396</h3>
+          </article>
+
+          <article class="summarysubinfo">
+            <p class="subinfoheading">SHIPPING</p>
+            <h3 class="subinfototal">$ 50</h3>
+          </article>
+
+          <article class="summarysubinfo">
+            <p class="subinfoheading">VAT (INCLUDED)</p>
+            <h3 class="subinfototal">$ 1,079</h3>
+          </article>
+
+          <article class="summarysubinfo">
+            <p class="subinfoheading">GRAND TOTAL</p>
+            <h3 class="subinfograndtotal">$ 5,446</h3>
+          </article>
+
+          <article class="btncontainer">
+            <button class="paybtn">CONTINUE & PAY</button>
+          </article>
+          
+
+        </article>
+        
+      </article>
+    </article>
+  </section>
+
+  <section class="spacing">
+  </section>
+  <footer class="desktopfooter">
+    <img src="./assets/shared/desktop/Rectangle.png" alt="line" class="line">
+    <article class="footernav">
+      <img src="./assets/shared/desktop/logo.svg" alt="logo" class="footerlogo">
+      <nav class="footerlinks">
+        <ul class="footerul">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="headphones.html">Headphones</a></li>
+          <li><a href="speakers.html">Speakers</a></li>
+          <li><a href="earphones.html">Earphones</a></li>
+        </ul>
+      </nav>
+    </article>
+
+    <article class="footerpara">
+      <p>Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers 
+        and sound specialists who are devoted to helping you get the most out of personal audio. Come and 
+        visit our demo facility - we’re open 7 days a week.</p>
+    </article>
+
+    <article class="sociallinks">
+      <div class="fblink">
+        <img src="./assets/shared/desktop/icon-facebook.svg" alt="fb">
+        <img src="./assets/shared/desktop/icon-facebook-hover.svg" alt="fb" class="hoverImage">
+      </div>
+      <div class="twitterlink">
+        <img src="./assets/shared/desktop/icon-twitter.svg" alt="twitter">
+        <img src="./assets/shared/desktop/icon-twitter-hover.svg" alt="fb" class="hoverImage">
+      </div>
+      <div class="instalink">
+        <img src="./assets/shared/desktop/icon-instagram.svg" alt="insta" >
+        <img src="./assets/shared/desktop/icon-instagram-hover.svg" alt="fb" class="hoverImage">
+      </div>
+      
+    </article>
+
+    <article class="copyright">
+      <p>Copyright 2021. All Rights Reserved</p>
+    </article>
+   
+  </footer>
+
+  <footer class="mobilefooter">
+    <img src="./assets/shared/desktop/Rectangle.png" alt="line" class="line">
+    <article class="footernavmobile">
+      <img src="./assets/shared/desktop/logo.svg" alt="logo" class="mobilelogo">
+      <nav class="footerlinksmobile">
+        <ul class="footerulmobile">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="headphones.html">Headphones</a></li>
+          <li><a href="speakers.html">Speakers</a></li>
+          <li><a href="earphones.html">Earphones</a></li>
+        </ul>
+      </nav>
+    </article>
+
+    <article class="footerparamobile">
+      <p>Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers 
+        and sound specialists who are devoted to helping you get the most out of personal audio. Come and 
+        visit our demo facility - we’re open 7 days a week.</p>
+    </article>
+
+    <article class="sociallinks">
+      <div class="fblink">
+        <img src="./assets/shared/desktop/icon-facebook.svg" alt="fb">
+        <img src="./assets/shared/desktop/icon-facebook-hover.svg" alt="fb" class="hoverImage">
+      </div>
+      <div class="twitterlink">
+        <img src="./assets/shared/desktop/icon-twitter.svg" alt="twitter">
+        <img src="./assets/shared/desktop/icon-twitter-hover.svg" alt="fb" class="hoverImage">
+      </div>
+      <div class="instalink">
+        <img src="./assets/shared/desktop/icon-instagram.svg" alt="insta" >
+        <img src="./assets/shared/desktop/icon-instagram-hover.svg" alt="fb" class="hoverImage">
+      </div>
+      
+    </article>
+
+    <article class="copyright">
+      <p>Copyright 2021. All Rights Reserved</p>
+    </article>
+   
+  </footer>
+  <!-- Home
   Headphones
   Speakers
-  Earphones
+  Earphones -->
 
   
   <!-- Cart Modal -->
-  Cart(3)
+  <!-- Cart(3)
   Remove All
 
   XX99 MK II x1
@@ -32,11 +369,11 @@
   
   Total $5,396
 
-  Checkout
+  Checkout -->
   <!-- Cart modal end -->
 
   
-  Go back
+  <!-- Go back
 
   Checkout
 
@@ -75,13 +412,13 @@
   Shipping $10
   VAT $120
 
-  Grand total $5,526
+  Grand total $5,526 -->
 
-  Continue & pay
+  <!-- Continue & pay -->
 
 
   <!-- Success Modal -->
-  Thank you for your order
+  <!-- Thank you for your order
   You will receive an email confirmation shortly.
 
   XX99 MK II x 1
@@ -91,11 +428,11 @@
   Grand total
   $5,526
 
-  Back to home
+  Back to home -->
   <!-- End success modal -->
 
 
-  Home
+  <!-- Home
   Headphones
   Speakers
   Earphones
@@ -104,7 +441,70 @@
   and sound specialists who are devoted to helping you get the most out of personal audio. Come and
   visit our demo facility - we’re open 7 days a week.
 
-  Copyright 2021. All Rights Reserved
+  Copyright 2021. All Rights Reserved -->
+
+  <script>
+    // Get a reference to the button element
+    const mark1 = document.getElementById("mark1");
+
+    // Add a click event listener to the button
+    mark1.addEventListener("click", function() {
+      // Redirect to the "product.html" page
+      window.location.href = "product-xx99-mark-one-headphones.html";
+    });
+
+    // Get a reference to the button element
+    const p59 = document.getElementById("p59");
+
+    // Add a click event listener to the button
+    p59.addEventListener("click", function() {
+      // Redirect to the "product.html" page
+      window.location.href = "product-xx59-headphones.html";
+    });
+
+    // Get a reference to the button element
+    const z9speaker = document.getElementById("z9speaker");
+
+    // Add a click event listener to the button
+    z9speaker.addEventListener("click", function() {
+      // Redirect to the "product.html" page
+      window.location.href = "product-zx9-speaker.html";
+    });
+
+    // Get a reference to the "Go Back" element
+    const goBackButton = document.getElementById("goBackButton");
+
+    // Add a click event listener to the element
+    goBackButton.addEventListener("click", function() {
+      // Use window.history.back() to navigate back to the previous page
+      window.history.back();
+    });
+
+    // JavaScript functions to open and close the modal
+    function openModal() {
+        document.getElementById('cartModal').style.display = 'block';
+        // Add a temporary event listener to close modal when clicking outside
+        setTimeout(function() {
+            window.addEventListener('mouseup', closeModalOutside);
+        }, 0);
+    }
+
+    function closeModal() {
+        document.getElementById('cartModal').style.display = 'none';
+        // Remove the event listener when closing the modal
+        window.removeEventListener('mouseup', closeModalOutside);
+    }
+
+    // Close the modal when clicked outside
+    function closeModalOutside(event) {
+        const modal = document.getElementById('cartModal');
+        if (event.target !== modal && !modal.contains(event.target)) {
+            closeModal();
+        }
+    }
+
+
+  </script>
 </body>
 
 </html>
