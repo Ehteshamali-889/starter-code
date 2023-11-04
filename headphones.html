@@ -127,7 +127,7 @@
         <h2 class="productinfoheading">XX99 Mark II Headphones</h2>
         <p class="productinfopara">The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium 
           headphone experience by reproducing the balanced depth and precision of studio-quality sound.</p>
-        <button class="productbtn">See product</button>
+        <button class="productbtn" onclick="redirectToXX99Page()">See product</button>
       </article>
     </article>
     
@@ -144,7 +144,7 @@
         <h2 class="productinfoheading">XX99 Mark I Headphones</h2>
         <p class="productinfopara">As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio 
           reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.</p>
-        <button class="productbtn">See product</button>
+        <button class="productbtn" onclick="redirectToXX99IPage()">See product</button>
       </article>
     </article>
     
@@ -162,7 +162,7 @@
         <h2 class="productinfoheading">XX59 Headphones</h2>
         <p class="productinfopara">Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. 
           The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.</p>
-        <button class="productbtn">See product</button>
+        <button class="productbtn" onclick="redirectToXX59Page()">See product</button>
       </article>
     </article>
     
@@ -431,6 +431,18 @@
         if (event.target !== modal && !modal.contains(event.target)) {
             closeModal();
         }
+    }
+
+    function redirectToXX99Page(){
+      window.location.href = 'product-xx99-mark-two-headphones.html';
+    }
+
+    function redirectToXX59Page(){
+      window.location.href = 'product-xx59-headphones.html';
+    }
+
+    function redirectToXX99IPage(){
+      window.location.href = 'product-xx99-mark-one-headphones.html';
     }
 
 

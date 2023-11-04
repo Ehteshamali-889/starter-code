@@ -127,7 +127,7 @@
         <h2 class="productinfoheading">YX1 wireless earphones</h2>
         <p class="productinfopara">Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. 
           Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.</p>
-        <button class="productbtn">See product</button>
+        <button class="productbtn" onclick="redirectToYX1Page()">See product</button>
       </article>
     </article>
     
@@ -396,6 +396,10 @@
         if (event.target !== modal && !modal.contains(event.target)) {
             closeModal();
         }
+    }
+
+    function redirectToYX1Page(){
+      window.location.href = 'product-earphones.html';
     }
 
 
