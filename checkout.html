@@ -253,7 +253,7 @@
           </article>
 
           <article class="btncontainer">
-            <button class="paybtn">CONTINUE & PAY</button>
+            <button class="paybtn" onclick="displayorder()">CONTINUE & PAY</button>
           </article>
           
 
@@ -261,6 +261,47 @@
         
       </article>
     </article>
+  </section>
+
+  <section class="order" id="orderModal">
+    <article class="ordermodalcontainer">
+      <img src="./assets/checkout/icon-order-confirmation.svg" alt="">
+      <article class="thankscontainer">
+        <h3 class="thanksheading">THANK YOU<br> FOR YOUR ORDER</h3>
+      </article>
+
+      <article class="confirmation">
+        <p>You will receive an email confirmation shortly.</p>
+      </article>
+
+      <article class="orderdetails">
+        <article class="orderleftcontainer">
+          <article class="orderleftside">
+            <img src="./assets/cart/image-xx99-mark-two-headphones.jpg" alt="headphones" class="productorderimage">
+            <article>
+              <h3 class="ordermaintitle">XX99 MK II</h3>
+              <p class="ordermainprice">$ 2,999</p>
+            </article>
+            <p class="ordermaincount">x1</p>
+          </article>
+          <hr class="hrorder">
+          <p class="orderextradetail">and 2 other item(s)</p>
+        </article>
+        <article class="orderrightcontainer">
+          <article class="orderrightside">
+            <h3 class="gradntotalheading">GRAND TOTAL</h3>
+            <p class="totalamount">$ 5,446</p>
+          </article>
+          
+        </article>
+      </article>
+
+      <article class="buttoncontainer">
+        <button class="backhomebtn" onclick="redirectToIndexPage()">BACK TO HOME</button>
+      </article>
+      
+    </article>
+    
   </section>
 
   <section class="spacing">
@@ -479,6 +520,14 @@
       // Use window.history.back() to navigate back to the previous page
       window.history.back();
     });
+
+    function displayorder(){
+      document.getElementById('orderModal').style.display = 'block';
+    }
+
+    function redirectToIndexPage() {
+      window.location.href = 'index.html'; // Replace 'index.html' with the actual path to your index page
+    }
 
     // JavaScript functions to open and close the modal
     function openModal() {

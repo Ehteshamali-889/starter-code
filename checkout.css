@@ -64,6 +64,147 @@ a:hover{
 
 /* Header Code ends */
 
+/* order modal starts*/
+
+#orderModal{
+    display: none;
+    position: fixed;
+    top: 15%;
+    left: 31%;
+    background-color: white;
+    z-index: 9999;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.ordermodalcontainer{
+    width: 540px;
+    height: 581px;
+    padding-left: 10%;
+    padding-top: 10%;
+}
+
+.thankscontainer{
+    width: 294px;
+    height: 72px;
+    padding-top: 5%;
+}
+
+.thanksheading{
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 1.14px;
+    line-height: 36px;
+}
+
+.confirmation{
+    margin-top: 10%;
+}
+
+.orderdetails{
+    width: 434px;
+    height: 140px;
+    margin-top: 10%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    background-color: var(--lightgray);
+}
+
+.productorderimage{
+    width: 50px;
+    height: 50px;
+}
+
+.orderleftside{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 198px;
+    height: 50px;
+    margin-bottom: 5%;
+}
+
+.orderleftcontainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 234px;
+}
+
+.hrorder{
+    border: 1px solid #dedede; /* Change the border color to black (#000) */
+    background-color: transparent; /* Set the background color to transparent */
+    width: 198px;
+    height: 1px;
+}
+
+.ordermaintitle{
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.ordermainprice{
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.orderextradetail{
+    font-size: 12px;
+    letter-spacing: -0.21px;
+    margin-top: 5%;
+}
+
+.ordermaincount{
+    font-size: 15px;
+    color: #787878;
+    line-height: 25px;
+}
+
+.orderrightcontainer{
+    background-color: var(--black);
+    width: 214px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.gradntotalheading{
+    color: #606060;
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.orderrightside{
+    width: 121px;
+    height: 57px;
+}
+
+.totalamount{
+    font-weight: bold;
+    margin-top: 5%;
+    font-size: 18px;
+    color: var(--White);
+}
+
+.backhomebtn{
+    width: 444px;
+    height: 48px;
+    background-color: var(--darkbrown);
+    border: none;
+    outline: none;
+    color: var(--White);
+    font-weight: bold;
+}
+
+.buttoncontainer{
+    margin-top: 8%;
+}
+/* order modal ends */
 /* cart section starts */
 
 /* Styles for the modal */
