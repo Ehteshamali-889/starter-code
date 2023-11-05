@@ -637,6 +637,28 @@
       } else {
         console.log("No cart items found in localStorage.");
       }
+      // 1. Retrieve the cart items from localStorage
+      const cartItemsJSON = localStorage.getItem("cartItems");
+
+      // 2. Calculate the total value
+      let totalValue = 0;
+
+      if (cartItemsJSON) {
+        const cartItems = JSON.parse(cartItemsJSON);
+        for (const item of cartItems) {
+          totalValue += item.price * item.quantity;
+        }
+      }
+
+      // 3. Store the total value in localStorage
+      localStorage.setItem("totalamount", totalValue);
+
+      // Find the HTML element with the "totalamount" class
+      const totalAmountElement = document.querySelector(".totalamount");
+
+      // Update the content of the element with the calculated total value
+      totalAmountElement.textContent = `$${totalValue.toFixed(2)}`;
+      
       const productItemsContainer = document.querySelector('.productlist');
       productItemsContainer.innerHTML = '';
 
