@@ -183,25 +183,26 @@ function getCartDataDetail() {
 getCartDataDetail();
 
 // Add a click event listener to the "+" button
-const singlemaxButtons = document.querySelectorAll(".singlemax");
-
-singlemaxButtons.forEach(function (button) {
-  button.addEventListener("click", function (event) {
-    const itemName = event.target.getAttribute("data-name");
-    updateQuantity(itemName, 1); // Increase the quantity by 1
-  });
+document.addEventListener('click', function (event) {
+    if (event.target.classList.contains('singlemax')) {
+      const itemName = event.target.getAttribute('data-name');
+      console.log("itemName",itemName);
+      updateQuantity(itemName, 1); // Increase the quantity by 1
+    }
 });
+    
+
 
 
 // Add a click event listener to the "-" button
-const singleminButtons = document.querySelectorAll(".singlemin");
-
-singleminButtons.forEach(function (button) {
-  button.addEventListener("click", function (event) {
-    const itemName = event.target.getAttribute("data-name");
-    updateQuantity(itemName, -1); // Increase the quantity by 1
-  });
+document.addEventListener('click', function (event) {
+    if (event.target.classList.contains('singlemin')) {
+      const itemName = event.target.getAttribute('data-name');
+      console.log("itemName",itemName);
+      updateQuantity(itemName, -1); // Increase the quantity by 1
+    }
 });
+
 
 
 // Function to update the quantity for a specific item
@@ -212,7 +213,7 @@ function updateQuantity(itemName, change) {
 
     // Find the item by name and update its quantity
     const itemToUpdate = cartItems.find(item => item.name === itemName);
-    // console.log("item",itemToUpdate);
+    console.log("item",itemToUpdate);
     if (itemToUpdate) {
         const quantityElement = document.querySelector(`[data-name="${itemName}-quantity"]`);
         // console.log("quantity", quantityElement);
