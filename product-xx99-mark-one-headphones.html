@@ -505,7 +505,9 @@
     const addToCartButton = document.getElementById("addtocart");
 
     // Add a click event listener to the button
-    addToCartButton.addEventListener("click", addToCart('XX99 MK I'));
+    addToCartButton.addEventListener("click", function() {
+      addToCart('XX99 MK I'); // Call the addToCart function with the product name when the button is clicked
+    });
     
 
 

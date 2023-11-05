@@ -1,7 +1,6 @@
 // cart functionality starts
 
-const removealltext= document.querySelector(".removeall");
-
+const removealltext = document.querySelector(".removeall");
 removealltext.addEventListener("click", removefromCart);
 
 function removefromCart() {
@@ -9,48 +8,41 @@ function removefromCart() {
   getCartDataDetail();
 }
 
-
-
-
-
 function addToCart(name) {
-  // get quanitity
+  // Get quantity
   const counterElement = document.getElementById("counter");
   let currentCounterValue = parseInt(counterElement.textContent);
-  var product='';
-  if(name=='XX99 MK II'){
-     product = {
-        name: "XX99 MK II",
-        price: 2999,
-        quantity: currentCounterValue,
-        imageUrl:'./assets/cart/image-xx99-mark-two-headphones.jpg'
-      };
-  }
-  else if(name=='XX99 MK I'){
+  var product = '';
+
+  if (name == 'XX99 MK II') {
     product = {
-        name: "XX99 MK I",
-        price: 1750,
-        quantity: currentCounterValue,
-        imageUrl:'./assets/cart/image-xx99-mark-one-headphones.jpg'
-      };
-  }
-  else if(name=='XX59'){
+      name: "XX99 MK II",
+      price: 2999,
+      quantity: currentCounterValue,
+      imageUrl: './assets/cart/image-xx99-mark-two-headphones.jpg'
+    };
+  } else if (name == 'XX99 MK I') {
     product = {
-        name: "XX59",
-        price: 899,
-        quantity: currentCounterValue,
-        imageUrl:'./assets/cart/image-xx59-headphones.jpg'
-      };
-  }
-  else if(name=='ZX7'){
+      name: "XX99 MK I",
+      price: 1750,
+      quantity: currentCounterValue,
+      imageUrl: './assets/cart/image-xx99-mark-one-headphones.jpg'
+    };
+  } else if (name == 'XX59') {
     product = {
-        name: "ZX7",
-        price: 3500,
-        quantity: currentCounterValue,
-        imageUrl:'./assets/cart/image-xx59-headphones.jpg'
-      };
+      name: "XX59",
+      price: 899,
+      quantity: currentCounterValue,
+      imageUrl: './assets/cart/image-xx59-headphones.jpg'
+    };
+  } else if (name == 'ZX7') {
+    product = {
+      name: "ZX7",
+      price: 3500,
+      quantity: currentCounterValue,
+      imageUrl: './assets/cart/image-xx59-headphones.jpg'
+    };
   }
-  
 
   // Check if the cartItems array already exists in localStorage
   const existingItemsJSON = localStorage.getItem("cartItems");
@@ -83,8 +75,6 @@ function addToCart(name) {
 
   console.log("Cart Items in localStorage:", localStorage.getItem("cartItems"));
 }
-
-
 
 // Get references to the relevant elements
 const plusButton = document.getElementById('max');
@@ -119,23 +109,23 @@ minusButton.addEventListener('click', () => {
   counterElement.textContent = currentValue;
 });
 
-
-function getCartDataDetail(){
+function getCartDataDetail() {
   // Get the JSON data from localStorage
-  var cartlist=[];
-  let cartlength=0;
-  let cartlengthtext= document.querySelector('.cartlength');
+  var cartlist = [];
+  let cartlength = 0;
+  let cartlengthtext = document.querySelector('.cartlength');
   const cartListJSON = localStorage.getItem("cartItems");
+
   if (cartListJSON) {
     cartlist = JSON.parse(cartListJSON);
-    cartlength=cartlist.length;
-    // console.log('cart lengt',cartlength);
-    cartlengthtext.innerText=cartlength;
+    cartlength = cartlist.length;
+    cartlengthtext.innerText = cartlength;
     console.log("Cart Items in localStorage:", cartlist);
   } else {
-    cartlengthtext.innerText=cartlength;
+    cartlengthtext.innerText = cartlength;
     console.log("No cart items found in localStorage.");
   }
+
   // 1. Retrieve the cart items from localStorage
   const cartItemsJSON = localStorage.getItem("cartItems");
 
@@ -178,16 +168,69 @@ function getCartDataDetail(){
         </article>
       </article>
       <article class="changecount">
-        <p class="min">-</p>
-        <p>${cartItem.quantity}</p>
-        <p class="max">+</p>
+        <p class="singlemin" data-name="${cartItem.name}">-</p>
+        <p data-name="${cartItem.name}-quantity">${cartItem.quantity}</p>
+        <p class="singlemax" data-name="${cartItem.name}">+</p>
       </article>
     `;
 
     // Append the newly created product item to the container
     productItemsContainer.appendChild(productItem);
   }
-  
 }
+
+// Get cart data immediately when the page loads
 getCartDataDetail();
-// cart functionality ends
+
+// Add a click event listener to the "+" button
+const singlemaxButtons = document.querySelectorAll(".singlemax");
+
+singlemaxButtons.forEach(function (button) {
+  button.addEventListener("click", function (event) {
+    const itemName = event.target.getAttribute("data-name");
+    updateQuantity(itemName, 1); // Increase the quantity by 1
+  });
+});
+
+
+// Add a click event listener to the "-" button
+const singleminButtons = document.querySelectorAll(".singlemin");
+
+singleminButtons.forEach(function (button) {
+  button.addEventListener("click", function (event) {
+    const itemName = event.target.getAttribute("data-name");
+    updateQuantity(itemName, -1); // Increase the quantity by 1
+  });
+});
+
+
+// Function to update the quantity for a specific item
+function updateQuantity(itemName, change) {
+  const cartItemsJSON = localStorage.getItem("cartItems");
+  if (cartItemsJSON) {
+    const cartItems = JSON.parse(cartItemsJSON);
+
+    // Find the item by name and update its quantity
+    const itemToUpdate = cartItems.find(item => item.name === itemName);
+    // console.log("item",itemToUpdate);
+    if (itemToUpdate) {
+        const quantityElement = document.querySelector(`[data-name="${itemName}-quantity"]`);
+        // console.log("quantity", quantityElement);
+
+        let currentQuantity = parseInt(quantityElement.textContent);
+        // console.log("count",currentQuantity);
+        // Ensure the quantity doesn't go below 1
+        if (currentQuantity + change >= 1) {
+            currentQuantity += change;
+            quantityElement.textContent = currentQuantity;
+
+            // Update the quantity in localStorage
+            itemToUpdate.quantity = currentQuantity;
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+            // console.log(localStorage.getItem("cartItems"));
+            // Recalculate and update the total amount
+            getCartDataDetail();
+        }
+    }
+  }
+}
