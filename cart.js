@@ -40,7 +40,21 @@ function addToCart(name) {
       name: "ZX7",
       price: 3500,
       quantity: currentCounterValue,
-      imageUrl: './assets/cart/image-xx59-headphones.jpg'
+      imageUrl: './assets/cart/image-zx7-speaker.jpg'
+    };
+  }  else if (name == 'ZX9') {
+    product = {
+      name: "ZX9",
+      price: 4500,
+      quantity: currentCounterValue,
+      imageUrl: './assets/cart/image-zx9-speaker.jpg'
+    };
+  } else if (name == 'YX1') {
+    product = {
+      name: "YX1",
+      price: 599,
+      quantity: currentCounterValue,
+      imageUrl: './assets/cart/image-yx1-earphones.jpg'
     };
   }
 
@@ -73,7 +87,7 @@ function addToCart(name) {
   // Update the displayed cart immediately
   getCartDataDetail();
 
-  console.log("Cart Items in localStorage:", localStorage.getItem("cartItems"));
+  // console.log("Cart Items in localStorage:", localStorage.getItem("cartItems"));
 }
 
 // Get references to the relevant elements
@@ -83,7 +97,7 @@ const counterElement = document.getElementById('counter');
 
 // Add a click event listener to the "+" button
 plusButton.addEventListener('click', () => {
-  console.log("plus");
+  // console.log("plus");
   // Get the current value
   let currentValue = parseInt(counterElement.textContent);
 
@@ -96,7 +110,7 @@ plusButton.addEventListener('click', () => {
 
 // Add a click event listener to the "-" button
 minusButton.addEventListener('click', () => {
-  console.log("minus");
+  // console.log("minus");
   // Get the current value
   let currentValue = parseInt(counterElement.textContent);
 
@@ -120,10 +134,10 @@ function getCartDataDetail() {
     cartlist = JSON.parse(cartListJSON);
     cartlength = cartlist.length;
     cartlengthtext.innerText = cartlength;
-    console.log("Cart Items in localStorage:", cartlist);
+    // console.log("Cart Items in localStorage:", cartlist);
   } else {
     cartlengthtext.innerText = cartlength;
-    console.log("No cart items found in localStorage.");
+    // console.log("No cart items found in localStorage.");
   }
 
   // 1. Retrieve the cart items from localStorage
@@ -186,7 +200,7 @@ getCartDataDetail();
 document.addEventListener('click', function (event) {
     if (event.target.classList.contains('singlemax')) {
       const itemName = event.target.getAttribute('data-name');
-      console.log("itemName",itemName);
+    //   console.log("itemName",itemName);
       updateQuantity(itemName, 1); // Increase the quantity by 1
     }
 });
@@ -198,7 +212,7 @@ document.addEventListener('click', function (event) {
 document.addEventListener('click', function (event) {
     if (event.target.classList.contains('singlemin')) {
       const itemName = event.target.getAttribute('data-name');
-      console.log("itemName",itemName);
+    //   console.log("itemName",itemName);
       updateQuantity(itemName, -1); // Increase the quantity by 1
     }
 });
@@ -213,7 +227,7 @@ function updateQuantity(itemName, change) {
 
     // Find the item by name and update its quantity
     const itemToUpdate = cartItems.find(item => item.name === itemName);
-    console.log("item",itemToUpdate);
+    // console.log("item",itemToUpdate);
     if (itemToUpdate) {
         const quantityElement = document.querySelector(`[data-name="${itemName}-quantity"]`);
         // console.log("quantity", quantityElement);

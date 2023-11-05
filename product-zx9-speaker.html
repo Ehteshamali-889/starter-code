@@ -22,84 +22,29 @@
         <li><a href="earphones.html">Earphones</a></li>
       </ul>
     </nav>
-    <img src="./assets/shared/desktop/icon-cart.svg" alt="cart">
+    <img src="./assets/shared/desktop/icon-cart.svg" alt="cart" id="openModal" onclick="openModal()">
   </header>
   <header class="mobile">
     <img src="./assets/shared/tablet/icon-hamburger.svg" alt="hamburger">
     <img src="./assets/shared/desktop/logo.svg" alt="logo">
-    <img src="./assets/shared/desktop/icon-cart.svg" alt="cart">
+    <img src="./assets/shared/desktop/icon-cart.svg" alt="cart" id="openModal" onclick="openModal()">
   </header>
 
   <section class="cart" id="cartModal">
     <article class="cartcontainer">
       <!-- <button id="closeModal" onclick="closeModal()">Close</button> -->
       <article class="topcartsection">
-        <h3>Cart(3)</h3>
+        <h3>Cart(<span class="cartlength">0</span>)</h3>
         <p class="removeall">Remove All</p>
       </article>
       <article class="productlist">
-        <article class="productitem">
-          <article class="productitemcontainer">
-            <article class="imgcontainer">
-              <img src="./assets/cart/image-xx99-mark-two-headphones.jpg" alt="twoheadphone" class="productimage">
-            </article>
-            <article class="productsmallinfo">
-              <h3>XX99 MK II </h3>
-              <p>$2,999</p>
-            </article>
-          </article>
-          
-          
-          <article class="changecount">
-            <p class="min">-</p>
-            <p>1</p>
-            <p class="max">+</p>
-          </article>
-        </article>
-  
-        <article class="productitem">
-          <article class="productitemcontainer">
-            <article class="imgcontainer">
-              <img src="./assets/cart/image-xx59-headphones.jpg" alt="twoheadphone" class="productimage">
-            </article>
-            <article class="productsmallinfo">
-              <h3>XX59</h3>
-              <p>$899</p>
-            </article>
-            
-            
-          </article>
-          <article class="changecount">
-            <p class="min">-</p>
-            <p>2</p>
-            <p class="max">+</p>
-          </article>
-        </article>
-  
-        <article class="productitem">
-          <article class="productitemcontainer">
-            <article class="imgcontainer">
-              <img src="./assets/cart/image-yx1-earphones.jpg" alt="twoheadphone" class="productimage">
-            </article>
-            <article class="productsmallinfo">
-              <h3>YX1</h3>
-              <p>$599</p>
-            </article>
-            
-            
-          </article>
-          <article class="changecount">
-            <p class="min">-</p>
-            <p>1</p>
-            <p class="max">+</p>
-          </article>
-        </article>
+        
       </article>
       
 
       <article class="bottomcartsection">
         <p>Total</p>
-        <h3> $5,396</h3>
+        <h3 class="totalamount">$0</h3>
       </article>
 
       <article class="lastsection">
@@ -127,11 +72,11 @@
         <h3 class="price">$4,500</h3>
         <article class="btnhub">
           <article class="collectionbtn">
-            <p class="min">-</p>
-            <p>1</p>
-            <p class="max">+</p>
+            <p class="min" id="min">-</p>
+            <p id="counter">1</p>
+            <p class="max" id="max">+</p>
           </article>
-          <button class="productbtn">See product</button>
+          <button class="productbtn" id="addtocart">ADD TO CART</button>
         </article>
         
       </article>
@@ -441,6 +386,7 @@
     </article>
    
   </footer>
+  <script src="cart.js"></script>
   <script>
     // Get a reference to the button element
     const mark1 = document.getElementById("mark1");
@@ -502,84 +448,17 @@
     }
 
 
+    // Get the button element by its ID
+    const addToCartButton = document.getElementById("addtocart");
+
+    // Add a click event listener to the button
+    addToCartButton.addEventListener("click", function() {
+      addToCart('ZX9'); // Call the addToCart function when the button is clicked
+    });
+
   </script>
   <script src="redirect.js"></script>
 </body>
-<!-- <body>
-  Home
-  Headphones
-  Speakers
-  Earphones
 
-  Go back
-  
-  New product
-
-  ZX9 Speaker
-  Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker 
-  system that offers truly wireless connectivity -- creating new possibilities for more 
-  pleasing and practical audio setups.
-  
-  $4,500
-  1
-  Add to cart
-
-  Features
-  Connect via Bluetooth or nearly any wired source. This speaker features optical, digital coaxial, 
-  USB Type-B, stereo RCA, and stereo XLR inputs, allowing you to have up to five wired source devices 
-  connected for easy switching. Improved bluetooth technology offers near lossless audio quality at 
-  up to 328ft (100m).
-
-  Discover clear, more natural sounding highs than the competition with ZX9’s signature planar diaphragm 
-  tweeter. Equally important is its powerful room-shaking bass courtesy of a 6.5” aluminum alloy bass 
-  unit. You’ll be able to enjoy equal sound quality whether in a large room or small den. Furthermore, you 
-  will experience new sensations from old songs since it can respond to even the subtle waveforms.
-
-  In the box
-  
-  2x Speaker unit
-  2x Speaker cloth panel
-  1x User manual
-  1x 3.5mm 10m audio cable
-  1x 10m optical cable
-  
-  You may also like
-  
-  ZX7 Speaker
-  See product
-  
-  XX99 Mark I
-  See product
-  
-  XX59
-  See product
-  
-  Headphones
-  Shop
-  
-  Speakers
-  Shop
-  
-  Earphones
-  Shop
-
-  Bringing you the best audio gear
-  Located at the heart of New York City, Audiophile is the premier store for high end headphones,
-  earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration
-  rooms available for you to browse and experience a wide range of our products. Stop by our store
-  to meet some of the fantastic people who make Audiophile the best place to buy your portable
-  audio equipment.
-
-  Home
-  Headphones
-  Speakers
-  Earphones
-
-  Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers
-  and sound specialists who are devoted to helping you get the most out of personal audio. Come and
-  visit our demo facility - we’re open 7 days a week.
-
-  Copyright 2021. All Rights Reserved
-</body> -->
 
 </html>
