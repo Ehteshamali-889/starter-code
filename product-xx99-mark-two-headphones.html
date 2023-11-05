@@ -34,7 +34,7 @@
     <article class="cartcontainer">
       <!-- <button id="closeModal" onclick="closeModal()">Close</button> -->
       <article class="topcartsection">
-        <h3>Cart(3)</h3>
+        <h3>Cart(<span class="cartlength">3</span>)</h3>
         <p class="removeall">Remove All</p>
       </article>
       <article class="productlist">
@@ -99,7 +99,7 @@
 
       <article class="bottomcartsection">
         <p>Total</p>
-        <h3> $5,396</h3>
+        <h3 class="totalamount"> $5,396</h3>
       </article>
 
       <article class="lastsection">
@@ -248,8 +248,8 @@
         </article>
         
         <h2 class="categoryheading">Headphones</h2>
-        <article class="innercategory">
-          <p class="categoryshop" onclick="redirectToheadphonesPage()">Shop</p>
+        <article class="innercategory" onclick="redirectToheadphonesPage()">
+          <p class="categoryshop">Shop</p>
           <img src="./assets/shared/desktop/icon-arrow-right.svg" >
         </article>
       </article>
@@ -261,8 +261,8 @@
         </article>
         
         <h2 class="categoryheading">Speakers</h2>
-        <article class="innercategory">
-          <p class="categoryshop" onclick="redirectTospeakerPage()">Shop</p>
+        <article class="innercategory" onclick="redirectTospeakerPage()">
+          <p class="categoryshop">Shop</p>
           <img src="./assets/shared/desktop/icon-arrow-right.svg" >
         </article>
         
@@ -275,8 +275,8 @@
         </article>
         
         <h2 class="categoryheading">Earphones</h2>
-        <article class="innercategory">
-          <p class="categoryshop" onclick="redirectToearphonePage()">Shop</p>
+        <article class="innercategory" onclick="redirectToearphonePage()">
+          <p class="categoryshop">Shop</p>
           <img src="./assets/shared/desktop/icon-arrow-right.svg" >
         </article>
         
@@ -541,6 +541,16 @@
 
     // cart functionality starts
 
+    const removealltext= document.querySelector(".removeall");
+
+    removealltext.addEventListener("click", removefromCart);
+    
+    function removefromCart() {
+      localStorage.removeItem("cartItems");
+      getCartDataDetail();
+    }
+
+
 
     // Get the button element by its ID
     const addToCartButton = document.getElementById("addtocart");
@@ -630,11 +640,17 @@
     function getCartDataDetail(){
       // Get the JSON data from localStorage
       var cartlist=[];
+      let cartlength=0;
+      let cartlengthtext= document.querySelector('.cartlength');
       const cartListJSON = localStorage.getItem("cartItems");
       if (cartListJSON) {
         cartlist = JSON.parse(cartListJSON);
+        cartlength=cartlist.length;
+        // console.log('cart lengt',cartlength);
+        cartlengthtext.innerText=cartlength;
         console.log("Cart Items in localStorage:", cartlist);
       } else {
+        cartlengthtext.innerText=cartlength;
         console.log("No cart items found in localStorage.");
       }
       // 1. Retrieve the cart items from localStorage
@@ -658,7 +674,7 @@
 
       // Update the content of the element with the calculated total value
       totalAmountElement.textContent = `$${totalValue.toFixed(2)}`;
-      
+
       const productItemsContainer = document.querySelector('.productlist');
       productItemsContainer.innerHTML = '';
 

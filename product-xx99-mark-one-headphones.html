@@ -34,7 +34,7 @@
     <article class="cartcontainer">
       <!-- <button id="closeModal" onclick="closeModal()">Close</button> -->
       <article class="topcartsection">
-        <h3>Cart(3)</h3>
+        <h3>Cart(<span class="cartlength">3</span>)</h3>
         <p class="removeall">Remove All</p>
       </article>
       <article class="productlist">
@@ -211,7 +211,7 @@
           </article>
           
           <h3 class="likeheading">XX99 Mark I</h3>
-          <button class="seebtn" id="mark1">See product</button>
+          <button class="seebtn" id="mark1" onclick="redirectToXX99IPage()">See product</button>
         </article>
 
         <article class="innercontainer">
@@ -220,7 +220,7 @@
           </article>
           
           <h3 class="likeheading">XX59</h3>
-          <button class="seebtn" id="p59">See product</button>
+          <button class="seebtn" id="p59"  onclick="redirectToXX59Page()">See product</button>
         </article>
 
         <article class="innercontainer">
@@ -229,7 +229,7 @@
           </article>
           
           <h3 class="likeheading">ZX9 speaker</h3>
-          <button class="seebtn" id="z9speaker">See product</button>
+          <button class="seebtn" id="z9speaker" onclick="redirectToZX9Page()">See product</button>
         </article>
       </article>
     </article>
@@ -244,7 +244,7 @@
         </article>
         
         <h2 class="categoryheading">Headphones</h2>
-        <article class="innercategory">
+        <article class="innercategory" onclick="redirectToheadphonesPage()">
           <p class="categoryshop">Shop</p>
           <img src="./assets/shared/desktop/icon-arrow-right.svg" >
         </article>
@@ -257,7 +257,7 @@
         </article>
         
         <h2 class="categoryheading">Speakers</h2>
-        <article class="innercategory">
+        <article class="innercategory" onclick="redirectTospeakerPage()">
           <p class="categoryshop">Shop</p>
           <img src="./assets/shared/desktop/icon-arrow-right.svg" >
         </article>
@@ -271,7 +271,7 @@
         </article>
         
         <h2 class="categoryheading">Earphones</h2>
-        <article class="innercategory">
+        <article class="innercategory" onclick="redirectToearphonePage()">
           <p class="categoryshop">Shop</p>
           <img src="./assets/shared/desktop/icon-arrow-right.svg" >
         </article>
@@ -499,7 +499,39 @@
         }
     }
 
+    function redirectToXX99IPage(){
+      window.location.href = 'product-xx99-mark-one-headphones.html';
+    }
+
+    function redirectToXX59Page(){
+      window.location.href = 'product-xx59-headphones.html';
+    }
+
+    function redirectToZX9Page(){
+      window.location.href = 'product-zx9-speaker.html';
+    }
+
+    function redirectToheadphonesPage(){
+      window.location.href = 'headphones.html';
+    }
+
+    function redirectTospeakerPage(){
+      window.location.href = 'speakers.html';
+    }
+
+    function redirectToearphonePage(){
+      window.location.href = 'earphones.html';
+    }
+
     // cart functionality starts
+    const removealltext= document.querySelector(".removeall");
+
+    removealltext.addEventListener("click", removefromCart);
+    
+    function removefromCart() {
+      localStorage.removeItem("cartItems");
+      getCartDataDetail();
+    }
 
 
     // Get the button element by its ID
@@ -583,15 +615,21 @@
       // Update the <p> element with the new value
       counterElement.textContent = currentValue;
     });
-
+    // localStorage.removeItem("cartItems");
     function getCartDataDetail(){
       // Get the JSON data from localStorage
       var cartlist=[];
+      let cartlength=0;
+      let cartlengthtext= document.querySelector('.cartlength');
       const cartListJSON = localStorage.getItem("cartItems");
       if (cartListJSON) {
         cartlist = JSON.parse(cartListJSON);
+        cartlength=cartlist.length;
+        // console.log('cart lengt',cartlength);
+        cartlengthtext.innerText=cartlength;
         console.log("Cart Items in localStorage:", cartlist);
       } else {
+        cartlengthtext.innerText=cartlength;
         console.log("No cart items found in localStorage.");
       }
       // 1. Retrieve the cart items from localStorage
