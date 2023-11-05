@@ -34,6 +34,22 @@ function addToCart(name) {
         imageUrl:'./assets/cart/image-xx99-mark-one-headphones.jpg'
       };
   }
+  else if(name=='XX59'){
+    product = {
+        name: "XX59",
+        price: 899,
+        quantity: currentCounterValue,
+        imageUrl:'./assets/cart/image-xx59-headphones.jpg'
+      };
+  }
+  else if(name=='ZX7'){
+    product = {
+        name: "ZX7",
+        price: 3500,
+        quantity: currentCounterValue,
+        imageUrl:'./assets/cart/image-xx59-headphones.jpg'
+      };
+  }
   
 
   // Check if the cartItems array already exists in localStorage
