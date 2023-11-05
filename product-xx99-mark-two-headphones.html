@@ -539,6 +539,9 @@
     // }
 
 
+    // cart functionality starts
+
+
     // Get the button element by its ID
     const addToCartButton = document.getElementById("addtocart");
 
@@ -571,8 +574,6 @@
       if (existingProductIndex !== -1) {
         // If it exists, update the quantity
         const existingProduct = cartItems[existingProductIndex];
-        // const counterElement = document.getElementById("counter");
-        // let currentCounterValue = parseInt(counterElement.textContent);
 
         // Increment the quantity in both localStorage and the object
         existingProduct.quantity += currentCounterValue;
@@ -583,6 +584,9 @@
 
       // Store the updated cartItems array back in localStorage
       localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+      // Update the displayed cart immediately
+      getCartDataDetail();
 
       console.log("Cart Items in localStorage:", localStorage.getItem("cartItems"));
     }
@@ -623,46 +627,51 @@
     });
 
     
-    // Get the JSON data from localStorage
-    var cartlist=[];
-    const cartListJSON = localStorage.getItem("cartItems");
-    if (cartListJSON) {
-      cartlist = JSON.parse(cartListJSON);
-      console.log("Cart Items in localStorage:", cartlist);
-    } else {
-      console.log("No cart items found in localStorage.");
-    }
-    const productItemsContainer = document.querySelector('.productlist');
+    function getCartDataDetail(){
+      // Get the JSON data from localStorage
+      var cartlist=[];
+      const cartListJSON = localStorage.getItem("cartItems");
+      if (cartListJSON) {
+        cartlist = JSON.parse(cartListJSON);
+        console.log("Cart Items in localStorage:", cartlist);
+      } else {
+        console.log("No cart items found in localStorage.");
+      }
+      const productItemsContainer = document.querySelector('.productlist');
+      productItemsContainer.innerHTML = '';
 
-    // Iterate through the items in localStorage
-    for (const cartItem of cartlist) {
-      // Create a new product item in the provided format
-      const productItem = document.createElement('article');
-      productItem.classList.add('productitem');
+      // Iterate through the items in localStorage
+      for (const cartItem of cartlist) {
+        // Create a new product item in the provided format
+        const productItem = document.createElement('article');
+        productItem.classList.add('productitem');
 
-      productItem.innerHTML = `
-        <article class="productitemcontainer">
-          <article class="imgcontainer">
-            <img src="${cartItem.imageUrl}" alt="${cartItem.name}" class="productimage">
+        productItem.innerHTML = `
+          <article class="productitemcontainer">
+            <article class="imgcontainer">
+              <img src="${cartItem.imageUrl}" alt="${cartItem.name}" class="productimage">
+            </article>
+            <article class="productsmallinfo">
+              <h3>${cartItem.name}</h3>
+              <p>$${cartItem.price}</p>
+            </article>
           </article>
-          <article class="productsmallinfo">
-            <h3>${cartItem.name}</h3>
-            <p>$${cartItem.price}</p>
+          <article class="changecount">
+            <p class="min">-</p>
+            <p>${cartItem.quantity}</p>
+            <p class="max">+</p>
           </article>
-        </article>
-        <article class="changecount">
-          <p class="min">-</p>
-          <p>${cartItem.quantity}</p>
-          <p class="max">+</p>
-        </article>
-      `;
+        `;
 
-      // Append the newly created product item to the container
-      productItemsContainer.appendChild(productItem);
+        // Append the newly created product item to the container
+        productItemsContainer.appendChild(productItem);
+      }
+      
     }
+    getCartDataDetail();
 
 
-
+    // cart functionality ends
 
 
   </script>
