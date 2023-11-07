@@ -25,3 +25,7 @@ function redirectToXX99IPage(){
   function redirectToCheckout(){
     window.location.href = 'checkout.html';
   }
+
+  function redirectToXX99Page(){
+    window.location.href = 'product-xx99-mark-two-headphones.html';
+  }
