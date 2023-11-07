@@ -21,3 +21,7 @@ function redirectToXX99IPage(){
   function redirectToearphonePage(){
     window.location.href = 'earphones.html';
   }
+
+  function redirectToCheckout(){
+    window.location.href = 'checkout.html';
+  }
