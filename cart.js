@@ -95,19 +95,21 @@ const plusButton = document.getElementById('max');
 const minusButton = document.getElementById('min');
 const counterElement = document.getElementById('counter');
 
-// Add a click event listener to the "+" button
-plusButton.addEventListener('click', () => {
-  // console.log("plus");
-  // Get the current value
-  let currentValue = parseInt(counterElement.textContent);
+if (plusButton) {
+  // Add a click event listener to the "+" button
+  plusButton.addEventListener('click', () => {
+    // console.log("plus");
+    // Get the current value
+    let currentValue = parseInt(counterElement.textContent);
 
-  // Increment the value
-  currentValue++;
+    // Increment the value
+    currentValue++;
 
-  // Update the <p> element with the new value
-  counterElement.textContent = currentValue;
-});
-
+    // Update the <p> element with the new value
+    counterElement.textContent = currentValue;
+  });
+}
+if (minusButton) {
 // Add a click event listener to the "-" button
 minusButton.addEventListener('click', () => {
   // console.log("minus");
@@ -122,6 +124,7 @@ minusButton.addEventListener('click', () => {
   // Update the <p> element with the new value
   counterElement.textContent = currentValue;
 });
+}
 
 function getCartDataDetail() {
   // Get the JSON data from localStorage
@@ -166,10 +169,19 @@ function getCartDataDetail() {
   localStorage.setItem("totalamount", totalValue);
 
   // Find the HTML element with the "totalamount" class
-  const totalAmountElement = document.querySelector(".totalamount");
+  const totalAmountElement = document.querySelector(".totaldisplayed");
 
   // Update the content of the element with the calculated total value
-  totalAmountElement.textContent = `$${totalValue.toFixed(2)}`;
+  totalAmountElement.textContent = `${totalValue}`;
+
+  // change format of number displayed
+  if (totalAmountElement) {
+    const value = parseInt(totalAmountElement.textContent, 10);
+    if (!isNaN(value)) {
+      // Format the number with a comma separator and update the content
+      totalAmountElement.textContent = value.toLocaleString();
+    }
+  }
 
   const productItemsContainer = document.querySelector('.productlist');
   productItemsContainer.innerHTML = '';

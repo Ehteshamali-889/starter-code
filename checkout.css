@@ -188,6 +188,13 @@ a:hover{
     font-weight: bold;
     margin-top: 5%;
     font-size: 18px;
+    color: var(--black);
+}
+
+.totalamountmodal{
+    font-weight: bold;
+    margin-top: 5%;
+    font-size: 18px;
     color: var(--White);
 }
 
