@@ -29,3 +29,11 @@ function redirectToXX99IPage(){
   function redirectToXX99Page(){
     window.location.href = 'product-xx99-mark-two-headphones.html';
   }
+
+  function redirectToZX7page(){
+    window.location.href = 'product-zx7-speaker.html';
+  }
+
+  function redirectToYX1page(){
+    window.location.href = 'product-earphones.html';
+  }
