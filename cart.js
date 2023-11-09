@@ -159,7 +159,7 @@ function getCartDataDetail() {
     cartlist = JSON.parse(cartListJSON);
     cartlength = cartlist.length;
     cartlengthtext.innerText = cartlength;
-    console.log("cartitem",cartlength );
+    // console.log("cartitem",cartlength );
     if (cartlength == 4) {
       const cartContainer = document.querySelector('.cartcontainer');
       cartContainer.style.height = '588px';

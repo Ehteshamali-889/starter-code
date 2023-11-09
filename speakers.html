@@ -10,6 +10,7 @@
   <title>Frontend Mentor | Audiophile e-commerce website</title>
   <link rel="stylesheet" href="speaker.css">
   <link rel="stylesheet" href="cartModal.css">
+  <link rel="stylesheet" href="mobilemenu.css">
 </head>
 
 <body>
@@ -26,10 +27,19 @@
     <img src="./assets/shared/desktop/icon-cart.svg" alt="cart" id="openModal" onclick="openModal()">
   </header>
   <header class="mobile">
-    <img src="./assets/shared/tablet/icon-hamburger.svg" alt="hamburger">
+    <img src="./assets/shared/tablet/icon-hamburger.svg" alt="hamburger" class="hamburger" onclick="toggleMenu()">
+    <img src="./assets/shared/icons8-close.svg" alt="hamburger" class="hamburgerclose" onclick="toggleMenu()">
     <img src="./assets/shared/desktop/logo.svg" alt="logo">
     <img src="./assets/shared/desktop/icon-cart.svg" alt="cart" id="openModal" onclick="openModal()">
   </header>
+  <section class="menumobile">
+    <ul class="navlinks">
+      <li><a href="index.html" class="navitem">Home</a></li>
+      <li><a href="headphones.html" class="navitem">Headphones</a></li>
+      <li><a href="speakers.html" class="navitem">Speakers</a></li>
+      <li><a href="earphones.html" class="navitem">Earphones</a></li>
+    </ul>
+  </section>
 
   <section class="headingsection">
     <h1 class="mainheading">Speakers</h1>
@@ -396,6 +406,7 @@
 
   </script>
   <script src="redirect.js"></script>
+  <script src="toggleMenu.js"></script>
   <!-- Home
   Headphones
   Speakers

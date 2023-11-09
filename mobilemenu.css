@@ -1,0 +1,38 @@
+/* mobile menu starts */
+.menumobile{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Coolgray);
+    text-align: center;
+    z-index: 100;
+}
+.menumobile.show-menu {
+    display: flex;
+}
+.hamburgerclose{
+    display: none;
+}
+.hamburger{
+    display: flex;
+}
+.navlinks{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap:10%;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+.navlinks li{
+    margin-bottom: 30%;
+}
+.navitem{
+    text-decoration: none;
+    color: var(--black);
+}
+/* mobile menu ends */
