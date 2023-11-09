@@ -59,6 +59,7 @@ function getSummaryDataDetail() {
       var vatValue = parseFloat(vatElement.textContent);
 
       var totalCharge = shippingValue + vatValue+totalValue;
+      localStorage.setItem("grandtotal", totalCharge);
       console.log("total Charge",totalCharge);
       
       grandtotalElement.textContent = `${totalCharge.toFixed(2)}`;
