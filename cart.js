@@ -83,11 +83,33 @@ function addToCart(name) {
 
   // Store the updated cartItems array back in localStorage
   localStorage.setItem("cartItems", JSON.stringify(cartItems));
-
+  displayToast(`${product.name} added to cart`);
   // Update the displayed cart immediately
   getCartDataDetail();
 
   // console.log("Cart Items in localStorage:", localStorage.getItem("cartItems"));
+}
+
+function displayToast(message) {
+  const toastContainer = document.getElementById("toastContainer");
+
+  // Create a new toast element
+  const toastElement = document.createElement("div");
+  toastElement.classList.add("toast");
+  toastElement.textContent = message;
+
+  // Append the toast to the container
+  toastContainer.appendChild(toastElement);
+
+  // Display the toast
+  toastElement.style.display = "block";
+
+  // Automatically hide the toast after a delay (e.g., 3000 milliseconds)
+  setTimeout(() => {
+    toastElement.style.display = "none";
+    // Remove the toast from the DOM to prevent it from accumulating
+    toastContainer.removeChild(toastElement);
+  }, 3000); // Adjust the delay as needed
 }
 
 // Get references to the relevant elements

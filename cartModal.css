@@ -113,6 +113,24 @@
 
 /* cart section ends */
 
+/* toast code starts */
+  #toastContainer {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+
+  .toast {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: none;
+  }
+/* toast code ends */
+
 @media (max-width:375px) {
     #cartModal {
         right: 7%;
